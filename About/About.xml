@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>囚犯管理面板</name>
+    <packageId>radio14.PrisonerManagementPanel</packageId>
+    <author>radio14</author>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <description>
+        囚犯总览界面
+        生物科技(Biotech)DLC：支持
+
+        语言：简体中文、繁体中文、English
+    </description>
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+    </loadAfter>
+</ModMetaData>

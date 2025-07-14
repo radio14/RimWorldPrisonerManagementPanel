@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnColumnDef>
+        <defName>RecruitmentResistance</defName>
+        <label>Resistance</label>
+        <workerClass>PrisonerManagementPanel.PawnColumnWorker_RecruitmentResistance</workerClass>
+        <sortable>true</sortable>
+    </PawnColumnDef>
+</Defs>

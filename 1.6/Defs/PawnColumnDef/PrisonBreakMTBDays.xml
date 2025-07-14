@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnColumnDef>
+        <defName>PrisonBreakMTBDays</defName>
+        <label>Prison break interval</label>
+        <workerClass>PrisonerManagementPanel.PawnColumnWorker_PrisonBreakMTBDays</workerClass>
+        <sortable>true</sortable>
+    </PawnColumnDef>
+</Defs>
+    

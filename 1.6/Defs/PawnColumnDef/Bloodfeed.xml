@@ -6,6 +6,7 @@
         <workerClass>PrisonerManagementPanel.PawnColumnWorker_Bloodfeed</workerClass>
         <sortable>true</sortable>
         <width>30</width>
+        <paintable>true</paintable>
     </PawnColumnDef>
 </Defs>
     

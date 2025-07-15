@@ -4,6 +4,7 @@
         <defName>PrisonerInteraction</defName>
         <label>Prisoner interaction</label>
         <workerClass>PrisonerManagementPanel.PawnColumnWorker_PrisonerInteraction</workerClass>
+        <paintable>true</paintable>
     </PawnColumnDef>
 </Defs>
     

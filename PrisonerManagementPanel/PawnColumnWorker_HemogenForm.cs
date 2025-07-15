@@ -8,9 +8,6 @@ namespace PrisonerManagementPanel
     // 收取血原质
     public class PawnColumnWorker_HemogenFarm : PawnColumnWorker_Checkbox
     {
-        // 复选框提示文字
-        protected override string GetTip(Pawn pawn) => "YumiHemogenHarvestDesc".Translate();
-
         // 是否显示复选框
         protected override bool HasCheckbox(Pawn pawn)
         {

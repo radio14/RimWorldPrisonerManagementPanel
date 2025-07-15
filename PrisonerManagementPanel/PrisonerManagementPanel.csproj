@@ -55,7 +55,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Class1.cs"/>
         <Compile Include="MainTabWindow_PrisonersTab.cs" />
         <Compile Include="PawnColumnWorker_Bloodfeed.cs" />
         <Compile Include="PawnColumnWorker_HemogenForm.cs" />

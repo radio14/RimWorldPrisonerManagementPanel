@@ -29,18 +29,37 @@ namespace PrisonerManagementPanel
 
             string label = currentMode?.LabelCap ?? "None".Translate();
 
-            if (Widgets.ButtonText(rect, label))
+            // 使用 Dropdown 替代 ButtonText + FloatMenu
+            Widgets.Dropdown<Pawn, PrisonerInteractionModeDef>(
+                rect,
+                pawn,
+                GetCurrentMode,
+                p => GenerateMenu(p, modes),
+                label,
+                dragLabel: label,
+                paintable: true
+            );
+        }
+
+        private PrisonerInteractionModeDef GetCurrentMode(Pawn pawn)
+        {
+            return pawn.guest.ExclusiveInteractionMode;
+        }
+
+        private IEnumerable<Widgets.DropdownMenuElement<PrisonerInteractionModeDef>> GenerateMenu(Pawn pawn,
+            List<PrisonerInteractionModeDef> modes)
+        {
+            foreach (PrisonerInteractionModeDef mode in modes)
             {
-                List<FloatMenuOption> menuOptions = modes.Select(mode => new FloatMenuOption(
-                    mode.LabelCap,
-                    () =>
+                yield return new Widgets.DropdownMenuElement<PrisonerInteractionModeDef>()
+                {
+                    option = new FloatMenuOption(mode.LabelCap, () =>
                     {
                         pawn.guest.SetExclusiveInteraction(mode);
                         InteractionModeChanged(mode, pawn);
-                    }
-                )).ToList();
-
-                Find.WindowStack.Add(new FloatMenu(menuOptions));
+                    }),
+                    payload = mode
+                };
             }
         }
 
@@ -69,6 +88,7 @@ namespace PrisonerManagementPanel
                    !pawn.everLostEgo;
         }
 
+        // 互动模式切换
         private void InteractionModeChanged(PrisonerInteractionModeDef newMode, Pawn pawn)
         {
             if (newMode == PrisonerInteractionModeDefOf.Enslave && pawn.MapHeld != null &&

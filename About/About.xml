@@ -4,6 +4,7 @@
     <packageId>radio14.PrisonerManagementPanel</packageId>
     <author>radio14</author>
     <supportedVersions>
+        <li>1.5</li>
         <li>1.6</li>
     </supportedVersions>
     <description>

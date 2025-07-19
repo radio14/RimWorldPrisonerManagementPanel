@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnColumnDef>
+        <defName>PrisonerInteraction</defName>
+        <label>Prisoner interaction</label>
+        <workerClass>PrisonerManagementPanel.PawnColumnWorker_PrisonerInteraction</workerClass>
+        <paintable>true</paintable>
+    </PawnColumnDef>
+</Defs>
+    

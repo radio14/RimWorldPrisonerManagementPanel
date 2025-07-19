@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnTableDef>
+        <defName>Prisoners</defName>
+        <workerClass>PrisonerManagementPanel.PawnTable_Prisoners</workerClass>
+        <columns>
+            <li>LabelWithIcon</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Ideo</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Xenotype</li>
+            <li>FoodRestriction</li>
+            <li>Gender</li>
+            <li>Age</li>
+            <li>MedicalCare</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">Bloodfeed</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">HemogenFarm</li>
+            <li>PrisonBreakMTBDays</li>
+            <li>RecruitmentResistance</li>
+            <li>SlavePrice</li>
+            <li>PrisonerInteraction</li>
+        </columns>
+    </PawnTableDef>
+</Defs>
+    

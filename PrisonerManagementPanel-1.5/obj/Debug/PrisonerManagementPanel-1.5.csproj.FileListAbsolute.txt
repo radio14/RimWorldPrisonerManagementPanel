@@ -1,0 +1,12 @@
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\bin\Debug\PrisonerManagementPanel_1._5.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\bin\Debug\PrisonerManagementPanel_1._5.pdb
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\bin\Debug\Assembly-CSharp.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\bin\Debug\UnityEngine.CoreModule.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\bin\Debug\UnityEngine.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\bin\Debug\UnityEngine.IMGUIModule.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\bin\Debug\UnityEngine.TextRenderingModule.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\obj\Debug\PrisonerManagementPanel-1.5.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\obj\Debug\PrisonerManagementPanel-1.5.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\obj\Debug\Prisoner.5FEB0A61.Up2Date
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\obj\Debug\PrisonerManagementPanel_1._5.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel-1.5\obj\Debug\PrisonerManagementPanel_1._5.pdb

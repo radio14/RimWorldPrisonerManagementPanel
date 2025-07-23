@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
+    <ManageSurgeryPolicies>管理手術方案</ManageSurgeryPolicies>
     <SurgeryPolicy_TitleKey>手術方案</SurgeryPolicy_TitleKey>
     <SurgeryPolicy_TipKey>建立與管理方案範本，以控制俘虜接受的手術清單。</SurgeryPolicy_TipKey>
     <SurgeryPolicy_Info>為俘虜指派手術方案：建立新方案或選擇現有方案。\n手術方案是一次性操作。指派後，俘虜將依照方案進行手術。\n手術完成後，方案標記會保留，但不會重複執行，除非方案本身被修改。\n特殊方案\n無方案：不安排任何手術。\n清除所有手術：移除該俘虜手術清單中的所有待執行手術。不影響當前正在進行的手術。</SurgeryPolicy_Info>

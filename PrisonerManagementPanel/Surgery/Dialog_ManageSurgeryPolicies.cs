@@ -88,9 +88,19 @@ public class Dialog_ManageSurgeryPolicies(SurgeryPolicy policy) : Dialog_ManageP
 
     protected override void DoContentsRect(Rect rect)
     {
-        if (PawnSurgeryPolicyStorage.Instance.IsNonePolicy(this.SelectedPolicy) ||
-            PawnSurgeryPolicyStorage.Instance.IsClearPolicy(this.SelectedPolicy))
+        if (PawnSurgeryPolicyStorage.Instance.IsNonePolicy(this.SelectedPolicy))
         {
+            Text.Font = GameFont.Medium;
+            Widgets.Label(new Rect(rect.x + 5f, rect.y + 5f, rect.width - 10f, 30f),
+                "SurgeryPolicy_NonePolicy_Info".Translate());
+            return;
+        }
+        
+        if (PawnSurgeryPolicyStorage.Instance.IsClearPolicy(this.SelectedPolicy))
+        {
+            Text.Font = GameFont.Medium;
+            Widgets.Label(new Rect(rect.x + 5f, rect.y + 5f, rect.width - 10f, 30f),
+                "SurgeryPolicy_ClearPolicy_Info".Translate());
             return;
         }
 

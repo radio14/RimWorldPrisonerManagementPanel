@@ -4,6 +4,7 @@ using Verse;
 using UnityEngine;
 using RimWorld;
 using System.Collections.Generic;
+using Verse.Sound;
 
 namespace PrisonerManagementPanel.ColumnWorker
 {
@@ -12,6 +13,15 @@ namespace PrisonerManagementPanel.ColumnWorker
     {
         public override int GetMinWidth(PawnTable table) => Mathf.Max(base.GetMinWidth(table), 160);
 
+        public override void DoHeader(Rect rect, PawnTable table)
+        {
+            base.DoHeader(rect, table);
+            MouseoverSounds.DoRegion(rect);
+            if (!Widgets.ButtonText(new Rect(rect.x, rect.y + (rect.height - 65f), Mathf.Min(rect.width, 360f), 32f), (string) "ManageSurgeryPolicies".Translate()))
+                return;
+            Find.WindowStack.Add((Window) new Dialog_ManageSurgeryPolicies((SurgeryPolicy) null));
+        }
+        
         // 绘制单元格内容
         public override void DoCell(Rect rect, Pawn pawn, PawnTable table)
         {

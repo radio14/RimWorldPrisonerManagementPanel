@@ -7,6 +7,7 @@ using RimWorld;
 using RimWorld.Planet;
 using UnityEngine;
 
+// TODO 还有两个翻译 SurgeryPolicy_NonePolicy_Info SurgeryPolicy_ClearPolicy_Info
 
 namespace PrisonerManagementPanel.Surgery
 {
@@ -271,6 +272,7 @@ namespace PrisonerManagementPanel.Surgery
 
         public void SetDefaultSurgeryPolicy(SurgeryPolicy policy)
         {
+            Log.Message($"传入的手术方案为：{policy.label ?? "真的没有"} - {policy.id}");
             if (IsClearPolicy(policy))
             {
                 return;
@@ -473,7 +475,7 @@ namespace PrisonerManagementPanel.Surgery
             }
 
             // 检查 DefaultPolicy 和 ClearPolicy
-            _defaultPolicy.RenamableLabel = "None".Translate();
+            NonePolicy.RenamableLabel = "None".Translate();
             ClearPolicy.RenamableLabel = "SurgeryPolicy_ClearPolicy".Translate();
 
             var changedPolicies = GetAllSurgeryPolicy().Where(p => p.IsDirty).ToList();

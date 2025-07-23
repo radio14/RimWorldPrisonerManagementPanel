@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-    <name>囚犯管理面板</name>
+    <name>PrisonerManagementPanel(囚犯管理面板)</name>
     <packageId>radio14.PrisonerManagementPanel</packageId>
     <author>radio14</author>
     <supportedVersions>

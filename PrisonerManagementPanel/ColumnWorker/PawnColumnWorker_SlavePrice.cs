@@ -2,7 +2,7 @@ using Verse;
 using UnityEngine;
 using RimWorld;
 
-namespace PrisonerManagementPanel
+namespace PrisonerManagementPanel.ColumnWorker
 {
     // 囚犯市场价值
     public class PawnColumnWorker_SlavePrice : PawnColumnWorker_Text

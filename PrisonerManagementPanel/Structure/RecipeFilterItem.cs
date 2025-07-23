@@ -3,11 +3,28 @@ using Verse;
 
 namespace PrisonerManagementPanel.Structure;
 
-public class RecipeFilterItem
+public class RecipeFilterItem : IExposable
 {
-    public RecipeDef Recipe { get; set; }
-    // public List<BodyPartDef> SelectedParts { get; set; } // 仅对移除身体部位有效
-    public List<BodyPartRecord> SelectedParts { get; set; } // 仅对移除身体部位有效
-    public bool IsExpanded;
+    private RecipeDef _recipe;
+    private List<BodyPartRecord> _selectedParts;
+
+    public RecipeDef Recipe
+    {
+        get => _recipe;
+        set => _recipe = value;
+    }
+
+    public List<BodyPartRecord> SelectedParts
+    {
+        get => _selectedParts;
+        set => _selectedParts = value;
+    }
+
     public bool IsBodyPartOperation => Recipe.defName == "RemoveBodyPart";
+    
+    public void ExposeData()
+    {
+        Scribe_Defs.Look(ref _recipe, "Recipe");
+        Scribe_Collections.Look(ref _selectedParts, "SelectedParts", LookMode.Reference);
+    }
 }

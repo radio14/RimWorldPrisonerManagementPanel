@@ -3,7 +3,7 @@ using Verse;
 using UnityEngine;
 using RimWorld;
 
-namespace PrisonerManagementPanel
+namespace PrisonerManagementPanel.ColumnWorker
 {
     // 囚犯越狱间隔天数列
     public class PawnColumnWorker_PrisonBreakMTBDays : PawnColumnWorker_Text

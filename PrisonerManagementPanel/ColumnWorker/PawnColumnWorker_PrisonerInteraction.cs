@@ -4,7 +4,7 @@ using Verse;
 using UnityEngine;
 using RimWorld;
 
-namespace PrisonerManagementPanel
+namespace PrisonerManagementPanel.ColumnWorker
 {
     // 囚犯互动
     public class PawnColumnWorker_PrisonerInteraction : PawnColumnWorker

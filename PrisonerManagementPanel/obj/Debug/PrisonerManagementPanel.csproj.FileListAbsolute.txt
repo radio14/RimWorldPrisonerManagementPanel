@@ -10,3 +10,4 @@ C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerMan
 C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Debug\Prisoner.E822F513.Up2Date
 C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Debug\PrisonerManagementPanel.dll
 C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Debug\PrisonerManagementPanel.pdb
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Debug\0Harmony.dll

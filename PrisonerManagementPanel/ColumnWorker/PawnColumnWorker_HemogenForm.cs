@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Verse;
 using RimWorld;
 
-namespace PrisonerManagementPanel
+namespace PrisonerManagementPanel.ColumnWorker
 {
     // 收取血原质
     public class PawnColumnWorker_HemogenFarm : PawnColumnWorker_Checkbox

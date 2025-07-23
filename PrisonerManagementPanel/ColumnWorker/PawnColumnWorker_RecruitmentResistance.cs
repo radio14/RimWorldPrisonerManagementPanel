@@ -2,7 +2,7 @@ using Verse;
 using UnityEngine;
 using RimWorld;
 
-namespace PrisonerManagementPanel
+namespace PrisonerManagementPanel.ColumnWorker
 {
     // 囚犯剩余抵抗
     public class PawnColumnWorker_RecruitmentResistance : PawnColumnWorker_Text

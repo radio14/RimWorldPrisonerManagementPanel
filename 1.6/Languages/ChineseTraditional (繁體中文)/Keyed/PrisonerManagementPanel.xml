@@ -5,6 +5,8 @@
     <SurgeryPolicy_TipKey>建立與管理方案範本，以控制俘虜接受的手術清單。</SurgeryPolicy_TipKey>
     <SurgeryPolicy_Info>為俘虜指派手術方案：建立新方案或選擇現有方案。\n手術方案是一次性操作。指派後，俘虜將依照方案進行手術。\n手術完成後，方案標記會保留，但不會重複執行，除非方案本身被修改。\n特殊方案\n無方案：不安排任何手術。\n清除所有手術：移除該俘虜手術清單中的所有待執行手術。不影響當前正在進行的手術。</SurgeryPolicy_Info>
     <SurgeryPolicy_ClearPolicy>清除所有手術</SurgeryPolicy_ClearPolicy>
+    <SurgeryPolicy_NonePolicy_Info>此方案為系統預設方案，不安排任何手術</SurgeryPolicy_NonePolicy_Info>
+    <SurgeryPolicy_ClearPolicy_Info>此方案為系統預設方案，移除該俘虜手術清單中的所有待執行手術。不影響當前正在進行的手術。</SurgeryPolicy_ClearPolicy_Info>
     <SurgeryPolicy_Delete_Report>無法刪除系統預設的手術方案</SurgeryPolicy_Delete_Report>
     <SurgeryPolicy_WhenUseDelete_Report>此手術方案正在使用中，請先將所有使用此方案的人物取消使用: {0}</SurgeryPolicy_WhenUseDelete_Report>
     <SurgeryPolicy_Delete_Default_Report>無法刪除預設手術方案</SurgeryPolicy_Delete_Default_Report>

@@ -5,6 +5,8 @@
     <SurgeryPolicy_TipKey>Create and manage policy templates to control the surgical procedures for prisoners.</SurgeryPolicy_TipKey>
     <SurgeryPolicy_Info>Assign a surgery policy to the prisoner: Create a new policy or select an existing one. \n Surgery policies are one-time procedures. Once assigned, the prisoner will undergo the surgeries in the policy. \n After completion, the policy remains marked but will not be repeated, unless the policy itself is modified. \n\n Special Policies: \n None Policy: Schedule no surgeries. \n Clear All Surgeries: Removes all pending surgeries from this prisoner's surgery list. Does not affect surgeries currently in progress.</SurgeryPolicy_Info>
     <SurgeryPolicy_ClearPolicy>Clear All Surgeries</SurgeryPolicy_ClearPolicy>
+    <SurgeryPolicy_NonePolicy_Info>This policy is a system preset policy. No surgeries will be scheduled for this prisoner.</SurgeryPolicy_NonePolicy_Info>
+    <SurgeryPolicy_ClearPolicy_Info>This policy is a system preset policy. Removes all pending surgeries from this prisoner's surgery list. Does not affect surgeries currently in progress.</SurgeryPolicy_ClearPolicy_Info>
     <SurgeryPolicy_Delete_Report>Cannot delete system default surgery policy</SurgeryPolicy_Delete_Report>
     <SurgeryPolicy_WhenUseDelete_Report>This surgery policy is in use. Please remove it from all assigned characters first: {0}</SurgeryPolicy_WhenUseDelete_Report>
     <SurgeryPolicy_Delete_Default_Report>Cannot delete default surgery policy</SurgeryPolicy_Delete_Default_Report>

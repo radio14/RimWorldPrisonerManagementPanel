@@ -91,16 +91,22 @@ public class Dialog_ManageSurgeryPolicies(SurgeryPolicy policy) : Dialog_ManageP
         if (PawnSurgeryPolicyStorage.Instance.IsNonePolicy(this.SelectedPolicy))
         {
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(rect.x + 5f, rect.y + 5f, rect.width - 10f, 30f),
-                "SurgeryPolicy_NonePolicy_Info".Translate());
+            string text = "SurgeryPolicy_NonePolicy_Info".Translate();
+            Text.WordWrap = true;
+            float textHeight = Text.CalcHeight(text, rect.width - 10f);
+            Rect labelRect = new Rect(rect.x + 5f, rect.y + 5f, rect.width - 10f, textHeight);
+            Widgets.Label(labelRect, text);
             return;
         }
-        
+
         if (PawnSurgeryPolicyStorage.Instance.IsClearPolicy(this.SelectedPolicy))
         {
             Text.Font = GameFont.Medium;
-            Widgets.Label(new Rect(rect.x + 5f, rect.y + 5f, rect.width - 10f, 30f),
-                "SurgeryPolicy_ClearPolicy_Info".Translate());
+            string text = "SurgeryPolicy_ClearPolicy_Info".Translate();
+            Text.WordWrap = true;
+            float textHeight = Text.CalcHeight(text, rect.width - 10f);
+            Rect labelRect = new Rect(rect.x + 5f, rect.y + 5f, rect.width - 10f, textHeight);
+            Widgets.Label(labelRect, text);
             return;
         }
 

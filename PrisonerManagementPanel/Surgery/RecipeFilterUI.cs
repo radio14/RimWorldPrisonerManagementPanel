@@ -65,6 +65,14 @@ namespace PrisonerManagementPanel.Surgery
 
             foreach (var item in filter.AllowedItems.ToList()) // 使用 ToList() 创建副本避免枚举时修改
             {
+                // 添加null检查
+                if (item == null || item.Recipe == null)
+                {
+                    // 如果配方项或配方为null，标记为待删除
+                    itemsToRemove.Add(item);
+                    continue;
+                }
+                
                 // 跳过未选择具体部位的"移除身体部位"项
                 if (item.Recipe.defName == "RemoveBodyPart" && item.SelectedParts.Count == 0)
                     continue;
@@ -316,8 +324,12 @@ namespace PrisonerManagementPanel.Surgery
 
             if (item.Recipe.targetsBodyPart && item.SelectedParts != null && item.SelectedParts.Count > 0)
             {
-                return
-                    $"{item.Recipe.LabelCap}({item.SelectedParts.First().customLabel ?? item.SelectedParts.First().def.label})";
+                var firstPart = item.SelectedParts.First();
+                if (firstPart != null)
+                {
+                    return
+                        $"{item.Recipe.LabelCap}({firstPart.customLabel ?? firstPart.def?.label ?? "Unknown"})";
+                }
             }
 
             return item.Recipe.LabelCap;

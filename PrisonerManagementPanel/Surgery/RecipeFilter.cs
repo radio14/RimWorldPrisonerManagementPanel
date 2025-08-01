@@ -28,6 +28,8 @@ namespace PrisonerManagementPanel.Surgery
 
             if (Scribe.mode == LoadSaveMode.Saving)
             {
+                // 保存前清理null项
+                _allowedItems = _allowedItems.Where(item => item != null && item.Recipe != null).ToList();
                 Scribe_Collections.Look(ref _allowedItems, "AllowedItems", LookMode.Deep);
             }
             else
@@ -37,39 +39,12 @@ namespace PrisonerManagementPanel.Surgery
                 {
                     _allowedItems = new List<RecipeFilterItem>();
                 }
+                else
+                {
+                    // 加载后清理null项
+                    _allowedItems = _allowedItems.Where(item => item != null && item.Recipe != null).ToList();
+                }
             }
-            // Scribe_Collections.Look(ref _allowedItems, "allowedItems", LookMode.Reference);
-            // Scribe_Values.Look(ref ApplyMode, "applyMode", SurgeryApplyMode.ReplaceAll);
-
-            // Scribe_Collections.Look(ref AllowedItems, "allowedItems", LookMode.Reference);
-            // Scribe_Values.Look(ref ApplyMode, "applyMode", SurgeryApplyMode.ReplaceAll);
-
-            // Scribe_Values.Look(ref ApplyMode, "applyMode");
-            // List<string> recipeNames = new List<string>();
-            // List<string> bodyPartNames = new List<string>(_allowedBodyParts);
-            //
-            // if (Scribe.mode == LoadSaveMode.Saving)
-            // {
-            //     recipeNames.AddRange(_allowedRecipes.Select(r => r.Recipe.defName));
-            //     bodyPartNames.AddRange(_allowedBodyParts);
-            // }
-
-            // Scribe_Collections.Look(ref recipeNames, "allowedRecipeNames", LookMode.Value);
-            // Scribe_Collections.Look(ref bodyPartNames, "allowedBodyPartNames", LookMode.Value);
-
-            // if (Scribe.mode == LoadSaveMode.LoadingVars)
-            // {
-            //     _allowedRecipes.Clear();
-            //     foreach (string name in recipeNames)
-            //     {
-            //         RecipeDef recipe = DefDatabase<RecipeDef>.GetNamedSilentFail(name);
-            //         if (recipe != null)
-            //         {
-            //             _allowedRecipes.Add(recipe);
-            //         }
-            //     }
-            //     _allowedBodyParts = new HashSet<string>(bodyPartNames);
-            // }
         }
 
         public void AddItem(RecipeFilterItem item)
@@ -87,26 +62,9 @@ namespace PrisonerManagementPanel.Surgery
             }
         }
 
-        // public void RemoveItem(RecipeFilterItem item)
-        // {
-        //     if (item == null) return;
-        //     Log.Message($"RemoveItem-item {item.Recipe.defName}");
-        //     int index = _allowedItems.FindIndex(i =>
-        //         i.Recipe == item.Recipe &&
-        //         (i.SelectedParts == null || i.SelectedParts.SequenceEqual(item.SelectedParts)));
-        //     Log.Message($"RemoveItem-index-- {index}");
-        //
-        //     if (index >= 0)
-        //     {
-        //         _allowedItems.RemoveAt(index);
-        //     }
-        // }
-
-
         public void RemoveItem(RecipeFilterItem item)
         {
             if (item == null) return;
-            Log.Message($"RemoveItem-item {item.Recipe.defName}");
 
             int index = _allowedItems.FindIndex(i =>
                 i.Recipe == item.Recipe &&
@@ -116,8 +74,6 @@ namespace PrisonerManagementPanel.Surgery
                      i.SelectedParts.SequenceEqual(item.SelectedParts))
                 )
             );
-
-            Log.Message($"RemoveItem-index-- {index}");
 
             if (index >= 0)
             {

@@ -37,6 +37,7 @@ public class RecipeFilterItem : IExposable
 
             // 将 BodyPartDef 转换为 BodyPartRecord
             return _selectedPartDefs
+                .Where(def => def != null)
                 .Select(def => BodyPartUtils.GetAllHumanBodyParts()
                     .FirstOrDefault(record => record.def == def))
                 .Where(record => record != null)

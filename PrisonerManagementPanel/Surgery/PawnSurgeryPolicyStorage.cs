@@ -272,7 +272,6 @@ namespace PrisonerManagementPanel.Surgery
 
         public void SetDefaultSurgeryPolicy(SurgeryPolicy policy)
         {
-            Log.Message($"传入的手术方案为：{policy.label ?? "真的没有"} - {policy.id}");
             if (IsClearPolicy(policy))
             {
                 return;

@@ -8,7 +8,7 @@ namespace PrisonerManagementPanel.Surgery;
 public class SurgeryPolicy : Policy
 {
     public RecipeFilter RecipeFilter = new RecipeFilter();
-    public SurgeryApplyMode ApplyMode = SurgeryApplyMode.ReplaceAll;
+    // public SurgeryApplyMode ApplyMode = SurgeryApplyMode.ReplaceAll;
     // 标记是否被修改过
     public bool IsDirty = false;
 
@@ -31,7 +31,7 @@ public class SurgeryPolicy : Policy
     {
         base.ExposeData();
         Scribe_Deep.Look(ref RecipeFilter, "recipeFilter");
-        Scribe_Values.Look(ref ApplyMode, "applyMode", SurgeryApplyMode.ReplaceAll);
+        // Scribe_Values.Look(ref ApplyMode, "applyMode", SurgeryApplyMode.ReplaceAll);
     }
     
     public override void CopyFrom(Policy other)

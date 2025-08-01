@@ -139,7 +139,7 @@ public class Dialog_ManageSurgeryPolicies(SurgeryPolicy policy) : Dialog_ManageP
         foreach (SurgeryApplyMode mode in Enum.GetValues(typeof(SurgeryApplyMode)))
         {
             string label = mode.GetLabel();
-            bool selected = policy.ApplyMode == mode;
+            bool selected = policy.RecipeFilter.ApplyMode == mode;
 
             listing.Gap(4f);
 
@@ -149,7 +149,7 @@ public class Dialog_ManageSurgeryPolicies(SurgeryPolicy policy) : Dialog_ManageP
 
             if (Widgets.RadioButtonLabeled(optionRect, label, selected))
             {
-                policy.ApplyMode = mode;
+                policy.RecipeFilter.ApplyMode = mode;
             }
         }
 

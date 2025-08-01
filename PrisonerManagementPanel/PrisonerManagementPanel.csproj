@@ -74,7 +74,6 @@
         <Compile Include="Surgery\RecipeFilter.cs" />
         <Compile Include="Surgery\RecipeFilterUI.cs" />
         <Compile Include="Surgery\SurgeryApplyMode.cs" />
-        <Compile Include="Surgery\SurgeryManager.cs" />
         <Compile Include="Surgery\SurgeryPolicy.cs" />
         <Compile Include="PrisonerManagementPanelSettings.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using PrisonerManagementPanel.Structure;
+using PrisonerManagementPanel.Utils;
 using UnityEngine;
 using Verse;
 using RimWorld;

@@ -1,13 +1,8 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using PrisonerManagementPanel.Structure;
 using Verse;
 using RimWorld;
-using RimWorld.Planet;
-using UnityEngine;
-
-// TODO 还有两个翻译 SurgeryPolicy_NonePolicy_Info SurgeryPolicy_ClearPolicy_Info
 
 namespace PrisonerManagementPanel.Surgery
 {

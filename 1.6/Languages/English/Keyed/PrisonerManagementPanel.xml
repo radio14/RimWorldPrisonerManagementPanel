@@ -24,4 +24,7 @@
     <SurgeryApplyMode_Append_Tip>Keep current surgeries and add policy surgeries.</SurgeryApplyMode_Append_Tip>
     <SurgeryApplyMode_PartialUpdate_Tip>Add only non-existing surgeries.</SurgeryApplyMode_PartialUpdate_Tip>
     <SurgeryApplyMode_Unknown_Tip>Error encountered, unknown mode.</SurgeryApplyMode_Unknown_Tip>
+    <!-- Strip -->
+    <ColumnStrip_Doing>Stripping</ColumnStrip_Doing>
+    <ColumnStripShiftClickTip>Shift + click: Strip all\nShift + right click: Cancel all</ColumnStripShiftClickTip>
 </LanguageData>

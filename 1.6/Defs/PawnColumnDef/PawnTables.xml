@@ -45,6 +45,13 @@
         <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_SlavePrice</workerClass>
         <sortable>true</sortable>
     </PawnColumnDef>
+
+    <PawnColumnDef>
+        <defName>Strip</defName>
+        <label>Strip</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_Strip</workerClass>
+        <sortable>true</sortable>
+    </PawnColumnDef>
     
     <PawnColumnDef>
         <defName>Surgery</defName>

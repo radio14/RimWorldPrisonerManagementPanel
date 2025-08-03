@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+    <Bloodfeed.label>只供吸血</Bloodfeed.label>
+    <HemogenFarm.label>血原畜養</HemogenFarm.label>
+    <PrisonBreakMTBDays.label>越獄間隔</PrisonBreakMTBDays.label>
+    <PrisonerInteraction.label>俘虜互動</PrisonerInteraction.label>
+    <RecruitmentResistance.label>反抗</RecruitmentResistance.label>
+    <SlavePrice.label>奴隸價格</SlavePrice.label>
+    <Surgery.label>手术</Surgery.label>
+    <Strip.label>掠奪</Strip.label>
+</languages>

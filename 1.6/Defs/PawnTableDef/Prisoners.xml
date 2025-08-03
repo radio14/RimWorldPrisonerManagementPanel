@@ -16,6 +16,7 @@
             <li>PrisonBreakMTBDays</li>
             <li>RecruitmentResistance</li>
             <li>SlavePrice</li>
+            <li>Strip</li>
             <li>PrisonerInteraction</li>
             <li>Surgery</li>
         </columns>

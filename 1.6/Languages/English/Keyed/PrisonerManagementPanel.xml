@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ManageSurgeryPolicies>Manage Surgery Policies</ManageSurgeryPolicies>
+    <SurgeryPolicy_TitleKey>Surgery Policy</SurgeryPolicy_TitleKey>
+    <SurgeryPolicy_TipKey>Create and manage policy templates to control the surgical procedures for prisoners.</SurgeryPolicy_TipKey>
+    <SurgeryPolicy_Info>Assign a surgery policy to the prisoner: Create a new policy or select an existing one. \n Surgery policies are one-time procedures. Once assigned, the prisoner will undergo the surgeries in the policy. \n After completion, the policy remains marked but will not be repeated, unless the policy itself is modified. \n\n Special Policies: \n None Policy: Schedule no surgeries. \n Clear All Surgeries: Removes all pending surgeries from this prisoner's surgery list. Does not affect surgeries currently in progress.</SurgeryPolicy_Info>
+    <SurgeryPolicy_ClearPolicy>Clear All Surgeries</SurgeryPolicy_ClearPolicy>
+    <SurgeryPolicy_NonePolicy_Info>This policy is a system preset policy. No surgeries will be scheduled for this prisoner.</SurgeryPolicy_NonePolicy_Info>
+    <SurgeryPolicy_ClearPolicy_Info>This policy is a system preset policy. Removes all pending surgeries from this prisoner's surgery list. Does not affect surgeries currently in progress.</SurgeryPolicy_ClearPolicy_Info>
+    <SurgeryPolicy_Delete_Report>Cannot delete system default surgery policy</SurgeryPolicy_Delete_Report>
+    <SurgeryPolicy_WhenUseDelete_Report>This surgery policy is in use. Please remove it from all assigned characters first: {0}</SurgeryPolicy_WhenUseDelete_Report>
+    <SurgeryPolicy_Delete_Default_Report>Cannot delete default surgery policy</SurgeryPolicy_Delete_Default_Report>
+    <SurgeryPolicy_Selected>Selected Recipe</SurgeryPolicy_Selected>
+    <SurgeryPolicy_List_Expand>Expand</SurgeryPolicy_List_Expand>
+    <SurgeryPolicy_List_Collapse>Collapse</SurgeryPolicy_List_Collapse>
+    <!-- Surgery Mode Translation -->
+    <SurgeryApplyMode_ApplyModeSelection_Title>Select Surgery Application Mode:</SurgeryApplyMode_ApplyModeSelection_Title>
+    <SurgeryApplyMode_ReplaceAll_Label>Replace All</SurgeryApplyMode_ReplaceAll_Label>
+    <SurgeryApplyMode_Append_Label>Append</SurgeryApplyMode_Append_Label>
+    <SurgeryApplyMode_PartialUpdate_Label>Partial Update</SurgeryApplyMode_PartialUpdate_Label>
+    <SurgeryApplyMode_Unknown_Label>Unknown Mode</SurgeryApplyMode_Unknown_Label>
+    <!-- Surgery Mode Tooltips -->
+    <SurgeryApplyMode_ReplaceAll_Tip>Clear all current surgeries and completely replace with policy surgeries.</SurgeryApplyMode_ReplaceAll_Tip>
+    <SurgeryApplyMode_Append_Tip>Keep current surgeries and add policy surgeries.</SurgeryApplyMode_Append_Tip>
+    <SurgeryApplyMode_PartialUpdate_Tip>Add only non-existing surgeries.</SurgeryApplyMode_PartialUpdate_Tip>
+    <SurgeryApplyMode_Unknown_Tip>Error encountered, unknown mode.</SurgeryApplyMode_Unknown_Tip>
+</LanguageData>

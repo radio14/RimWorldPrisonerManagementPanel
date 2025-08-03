@@ -1,7 +1,7 @@
 using Verse;
 using RimWorld;
 
-namespace PrisonerManagementPanel
+namespace PrisonerManagementPanel.ColumnWorker
 {
     // 汲血
     public class PawnColumnWorker_Bloodfeed : PawnColumnWorker_Checkbox

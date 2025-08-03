@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+    <Bloodfeed.label>汲血</Bloodfeed.label>
+    <HemogenFarm.label>收取血原质</HemogenFarm.label>
+    <PrisonBreakMTBDays.label>越狱间隔</PrisonBreakMTBDays.label>
+    <PrisonerInteraction.label>囚犯互动</PrisonerInteraction.label>
+    <RecruitmentResistance.label>抵抗</RecruitmentResistance.label>
+    <SlavePrice.label>市场价值</SlavePrice.label>
+    <Surgery.label>手术</Surgery.label>
+</languages>

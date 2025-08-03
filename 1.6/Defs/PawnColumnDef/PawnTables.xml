@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+    <PawnColumnDef MayRequire="Ludeon.RimWorld.Biotech">
+        <defName>Bloodfeed</defName>
+        <label>Bloodfeed</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_Bloodfeed</workerClass>
+        <sortable>true</sortable>
+        <width>30</width>
+        <paintable>true</paintable>
+    </PawnColumnDef>
+
+    <PawnColumnDef MayRequire="Ludeon.RimWorld.Biotech">
+        <defName>HemogenFarm</defName>
+        <label>Hemogen farm</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_HemogenFarm</workerClass>
+        <sortable>true</sortable>
+        <width>30</width>
+        <paintable>true</paintable>
+    </PawnColumnDef>
+
+    <PawnColumnDef>
+        <defName>PrisonBreakMTBDays</defName>
+        <label>Prison break interval</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_PrisonBreakMTBDays</workerClass>
+        <sortable>true</sortable>
+    </PawnColumnDef>
+
+    <PawnColumnDef>
+        <defName>PrisonerInteraction</defName>
+        <label>Prisoner interaction</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_PrisonerInteraction</workerClass>
+        <paintable>true</paintable>
+    </PawnColumnDef>
+
+    <PawnColumnDef>
+        <defName>RecruitmentResistance</defName>
+        <label>Resistance</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_RecruitmentResistance</workerClass>
+        <sortable>true</sortable>
+    </PawnColumnDef>
+
+    <PawnColumnDef>
+        <defName>SlavePrice</defName>
+        <label>Slave price</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_SlavePrice</workerClass>
+        <sortable>true</sortable>
+    </PawnColumnDef>
+    
+    <PawnColumnDef>
+        <defName>Surgery</defName>
+        <label>Surgery</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_Surgery</workerClass>
+    </PawnColumnDef>
+</Defs>

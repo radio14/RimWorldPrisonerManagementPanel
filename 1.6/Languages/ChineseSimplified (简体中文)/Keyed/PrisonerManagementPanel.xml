@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ManageSurgeryPolicies>管理手术方案</ManageSurgeryPolicies>
+    <SurgeryPolicy_TitleKey>手术方案</SurgeryPolicy_TitleKey>
+    <SurgeryPolicy_TipKey>创建和管理方案模板，以控制囚犯采取的手术清单。</SurgeryPolicy_TipKey>
+    <SurgeryPolicy_Info>为囚犯指派手术方案：创建新方案或选择现有方案。\n手术方案是一次性操作。指派后，囚犯将按方案进行手术。\n手术完成后，方案标记保留，但不会重复执行，除非方案本身被修改。\n特殊方案：\n【无方案】：不安排任何手术。\n【清除所有手术】：移除该囚犯手术清单中的所有待执行手术。不影响当前正在进行的手术。</SurgeryPolicy_Info>
+    <SurgeryPolicy_ClearPolicy>清空所有手术</SurgeryPolicy_ClearPolicy>
+    <SurgeryPolicy_NonePolicy_Info>此方案为系统预设方案，不安排任何手术</SurgeryPolicy_NonePolicy_Info>
+    <SurgeryPolicy_ClearPolicy_Info>此方案为系统预设方案，移除该囚犯手术清单中的所有待执行手术。不影响当前正在进行的手术。</SurgeryPolicy_ClearPolicy_Info>
+    <SurgeryPolicy_Delete_Report>不能删除系统预设的手术方案</SurgeryPolicy_Delete_Report>
+    <SurgeryPolicy_WhenUseDelete_Report>该手术方案正在使用中，请先将所有使用此方案的人物取消使用: {0}
+    </SurgeryPolicy_WhenUseDelete_Report>
+    <SurgeryPolicy_Delete_Default_Report>不能删除默认手术方案</SurgeryPolicy_Delete_Default_Report>
+    <SurgeryPolicy_Selected>已选择的配方</SurgeryPolicy_Selected>
+    <SurgeryPolicy_List_Expand>展开</SurgeryPolicy_List_Expand>
+    <SurgeryPolicy_List_Collapse>收起</SurgeryPolicy_List_Collapse>
+    <!-- 手术模式翻译 -->
+    <SurgeryApplyMode_ApplyModeSelection_Title>选择手术应用模式</SurgeryApplyMode_ApplyModeSelection_Title>
+    <SurgeryApplyMode_ReplaceAll_Label>完全更新</SurgeryApplyMode_ReplaceAll_Label>
+    <SurgeryApplyMode_Append_Label>追加</SurgeryApplyMode_Append_Label>
+    <SurgeryApplyMode_PartialUpdate_Label>部分更新</SurgeryApplyMode_PartialUpdate_Label>
+    <SurgeryApplyMode_Unknown_Label>未知模式</SurgeryApplyMode_Unknown_Label>
+    <!-- 手术模式提示翻译 -->
+    <SurgeryApplyMode_ReplaceAll_Tip>清空当前人物所有手术，并完全替换为方案中的手术。</SurgeryApplyMode_ReplaceAll_Tip>
+    <SurgeryApplyMode_Append_Tip>保留当前手术，并添加方案中的手术。</SurgeryApplyMode_Append_Tip>
+    <SurgeryApplyMode_PartialUpdate_Tip>仅添加不存在的手术。</SurgeryApplyMode_PartialUpdate_Tip>
+    <SurgeryApplyMode_Unknown_Tip>遇到了一些错误，未知模式</SurgeryApplyMode_Unknown_Tip>
+</LanguageData>

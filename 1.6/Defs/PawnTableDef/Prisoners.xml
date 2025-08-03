@@ -17,6 +17,7 @@
             <li>RecruitmentResistance</li>
             <li>SlavePrice</li>
             <li>PrisonerInteraction</li>
+            <li>Surgery</li>
         </columns>
     </PawnTableDef>
 </Defs>

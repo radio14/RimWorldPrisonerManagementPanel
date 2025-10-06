@@ -4,7 +4,7 @@
         <defName>PrisonersTab</defName>
         <label>Prisoners</label>
         <description>Dispose of all prisoners in the colony</description>
-        <order>45</order>
+        <order>530</order>
         <tabWindowClass>PrisonerManagementPanel.MainTabWindow_PrisonersTab</tabWindowClass>
         <closesWorldView>true</closesWorldView>
     </MainButtonDef>

@@ -13,11 +13,6 @@ namespace PrisonerManagementPanel.Surgery
     public static class RecipeFilterUI
     {
         private static float viewHeight;
-        private const float ExtraViewHeight = 90f;
-        private const float RangeLabelTab = 10f;
-        private const float RangeLabelHeight = 19f;
-        private const float SliderHeight = 32f;
-        private const float SliderTab = 20f;
 
         private static readonly string[] ApplyModeLabels = Enum.GetValues(typeof(SurgeryApplyMode))
             .Cast<SurgeryApplyMode>()
@@ -52,7 +47,7 @@ namespace PrisonerManagementPanel.Surgery
 
             // 计算内容高度（只计算普通配方和具体部位操作）
             float contentHeight = filter.AllowedItems
-                .Where(item => item.Recipe.defName != "RemoveBodyPart" || item.SelectedParts.Count > 0)
+                .Where(item => item.Recipe.defName != "RemoveBodyPart" || item.GetSelectedPartsWithRace(filter.Race).Count > 0)
                 .Sum(item => 28f);
 
             Rect viewRect = new Rect(0f, 0f, listRect.width - 16f, contentHeight);
@@ -75,13 +70,13 @@ namespace PrisonerManagementPanel.Surgery
                 }
                 
                 // 跳过未选择具体部位的"移除身体部位"项
-                if (item.Recipe.defName == "RemoveBodyPart" && item.SelectedParts.Count == 0)
+                if (item.Recipe.defName == "RemoveBodyPart" && item.GetSelectedPartsWithRace(filter.Race).Count == 0)
                     continue;
 
                 listing.Gap(4f);
                 Rect rowRect = listing.GetRect(24f);
 
-                string displayLabel = GetDisplayLabel(item);
+                string displayLabel = GetDisplayLabel(item, filter.Race);
 
                 if (displayLabel != null)
                 {
@@ -241,9 +236,13 @@ namespace PrisonerManagementPanel.Surgery
         private static void DoBodyPartSelection(RecipeFilter filter, Listing_Standard listing, RecipeDef recipe,
             SurgeryPolicy policy)
         {
+            // 使用选中的种族获取身体部位
+            ThingDef selectedRace = filter.Race;
+            IEnumerable<BodyPartRecord> bodyParts = BodyPartUtils.GetAllBodyPartsForRace(selectedRace);
+
             if (recipe.defName == "RemoveBodyPart")
             {
-                foreach (BodyPartRecord part in BodyPartUtils.GetAllHumanBodyParts())
+                foreach (BodyPartRecord part in bodyParts)
                 {
                     // 过滤不可移除的部位
                     if (BodyPartUtils.IsUnremovable(part))
@@ -261,11 +260,10 @@ namespace PrisonerManagementPanel.Surgery
                     if (Widgets.ButtonText(partRect.RightPart(0.3f), "+"))
                     {
                         // 创建新的配方项（每个部位单独添加）
-                        filter.AddItem(new RecipeFilterItem
-                        {
-                            Recipe = recipe,
-                            SelectedParts = new List<BodyPartRecord> { part }
-                        });
+                        RecipeFilterItem addItem = new RecipeFilterItem();
+                        addItem.Recipe = recipe;
+                        addItem.SetSelectedParts(new List<BodyPartRecord> { part });
+                        filter.AddItem(addItem);
                         policy.MarkDirty();
                         SoundDefOf.Click.PlayOneShotOnCamera();
                     }
@@ -274,7 +272,7 @@ namespace PrisonerManagementPanel.Surgery
                 return;
             }
 
-            foreach (BodyPartRecord part in BodyPartUtils.GetAllHumanBodyParts())
+            foreach (BodyPartRecord part in bodyParts)
             {
                 // 检查部位是否适用当前配方
                 if (IsPartValidForRecipe(recipe, part))
@@ -286,11 +284,10 @@ namespace PrisonerManagementPanel.Surgery
 
                     if (Widgets.ButtonText(partRect.RightPart(0.3f), "+"))
                     {
-                        filter.AddItem(new RecipeFilterItem
-                        {
-                            Recipe = recipe,
-                            SelectedParts = new List<BodyPartRecord> { part }
-                        });
+                        RecipeFilterItem addItem = new RecipeFilterItem();
+                        addItem.Recipe = recipe;
+                        addItem.SetSelectedParts(new List<BodyPartRecord> { part });
+                        filter.AddItem(addItem);
                         policy.MarkDirty();
                         SoundDefOf.Click.PlayOneShotOnCamera();
                     }
@@ -316,16 +313,18 @@ namespace PrisonerManagementPanel.Surgery
         }
 
         // 名称显示
-        public static string GetDisplayLabel(RecipeFilterItem item)
+        public static string GetDisplayLabel(RecipeFilterItem item, ThingDef race)
         {
             if (item == null || item.Recipe == null)
             {
                 return null;
             }
 
-            if (item.Recipe.targetsBodyPart && item.SelectedParts != null && item.SelectedParts.Count > 0)
+            // 使用GetSelectedPartsWithRace方法获取特定种族的身体部位
+            var selectedParts = item.GetSelectedPartsWithRace(race);
+            if (item.Recipe.targetsBodyPart && selectedParts != null && selectedParts.Count > 0)
             {
-                var firstPart = item.SelectedParts.First();
+                var firstPart = selectedParts.First();
                 if (firstPart != null)
                 {
                     return

@@ -1,8 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using PrisonerManagementPanel.Structure;
 using Verse;
 using RimWorld;
+using System.Reflection;
+using System.IO;
+using PrisonerManagementPanel.Utils;
+using UnityEngine;
 
 namespace PrisonerManagementPanel.Surgery
 {
@@ -32,7 +37,8 @@ namespace PrisonerManagementPanel.Surgery
         [Unsaved] private static Dictionary<Pawn, SurgeryPolicy> _pawnPolicies = new Dictionary<Pawn, SurgeryPolicy>();
 
         // 数据版本 2025/07/21: 1
-        private int _dataVersion = 1;
+        // 数据版本 2025/10/19：2 添加种族
+        private int _dataVersion = 2;
 
 
         public PawnSurgeryPolicyStorage()
@@ -58,8 +64,6 @@ namespace PrisonerManagementPanel.Surgery
 
         public override void FinalizeInit()
         {
-            // Log.Message("加载中...");
-            // Log.Message($"FinalizeInit共有 {_allSurgeryPolicy.Count} 个手术策略");
             _pawnPolicies.Clear();
             _policyToPawnsMap.Clear();
 
@@ -67,8 +71,6 @@ namespace PrisonerManagementPanel.Surgery
             List<Pawn> allPrisoners = Find.Maps
                 .SelectMany(map => map.mapPawns.PrisonersOfColony)
                 .ToList();
-            // Log.Message($"共有 {allPrisoners.Count} 人");
-            // Log.Message($"共有 {_pawnPolicyPairs.Count} 个 _pawnPolicyPairs 映射关系");
 
             // 创建一个字典用于快速查找
             Dictionary<int, SurgeryPolicy> pawnPolicyDict = _pawnPolicyPairs
@@ -141,6 +143,85 @@ namespace PrisonerManagementPanel.Surgery
             Scribe_Collections.Look(ref _pawnPolicyPairs, "pawnPolicyPairs", LookMode.Deep);
             Scribe_Collections.Look(ref _allSurgeryPolicy, "allSurgeryPolicy", LookMode.Deep);
             Scribe_References.Look(ref _defaultPolicy, "defaultPolicy");
+
+            Log.Message($"PrisonerManagementPanel version {_dataVersion}");
+
+            // 低版本数据修复
+            if (Scribe.mode == LoadSaveMode.LoadingVars && _dataVersion < 2)
+            {
+                // 修复旧版本数据
+                FixLegacyData();
+            }
+
+            _dataVersion = 2;
+        }
+
+        // 修复旧版本数据
+        private void FixLegacyData()
+        {
+            Log.Message("修复旧版本数据");
+
+            // 检查所有policy是否有种族设置，如果没有则添加默认种族
+            if (_allSurgeryPolicy != null)
+            {
+                foreach (var policy in _allSurgeryPolicy)
+                {
+                    if (policy != null && policy.RecipeFilter != null && policy.RecipeFilter.Race == null)
+                    {
+                        policy.RecipeFilter.Race = RaceUtils.DefaultRace();
+                        Log.Message($"为Policy {policy.label} 设置默认种族");
+                    }
+                }
+            }
+
+            // // 检查所有pawn和policy的种族兼容性
+            // if (_pawnPolicyPairs == null)
+            // {
+            //     Log.Message("空的");
+            //     return;
+            // }
+            //
+            // var incompatiblePairs = new List<PawnSurgeryPolicyPair>();
+            //
+            // // 在加载时Find.CurrentMap可能为null，所以我们需要遍历所有地图
+            // List<Map> maps = Find.Maps;
+            //
+            // Log.Message($"{maps.Count}---count");
+            //
+            // foreach (var pair in _pawnPolicyPairs)
+            // {
+            //     // 需要通过ID找到对应的Pawn
+            //     Pawn pawn = null;
+            //     
+            //     // 遍历所有地图查找pawn
+            //     foreach (var map in maps)
+            //     {
+            //         if (map.mapPawns != null)
+            //         {
+            //             pawn = map.mapPawns.AllPawns.FirstOrDefault(p => p.thingIDNumber == pair.pawnID);
+            //             if (pawn != null) break;
+            //         }
+            //     }
+            //     
+            //     Log.Message($"{pawn?.LabelCap}---");
+            //     
+            //     // 如果找不到Pawn或者种族不匹配，则记录为不兼容
+            //     if (pawn != null && pair.SurgeryPolicy?.RecipeFilter != null && 
+            //         !RaceUtils.IsRaceMatch(pawn.def, pair.SurgeryPolicy.RecipeFilter.Race ?? RaceUtils.DefaultRace()))
+            //     {
+            //         incompatiblePairs.Add(pair);
+            //     }
+            // }
+            //
+            // // 移除不兼容的pawn-policy关联
+            // foreach (var pair in incompatiblePairs)
+            // {
+            //     if (_pawnPolicyPairs.Contains(pair))
+            //     {
+            //         _pawnPolicyPairs.Remove(pair);
+            //         Log.Warning($"移除了Pawn ID {pair.pawnID} 与Policy {pair.SurgeryPolicy?.label ?? "Unknown"} 的不兼容关联");
+            //     }
+            // }
         }
 
         private void RebuildPolicyToPawnsMap()
@@ -198,7 +279,7 @@ namespace PrisonerManagementPanel.Surgery
         }
 
         // 设置 Pawn 的手术策略
-        public void SetPolicyForPawn(Pawn pawn, SurgeryPolicy policy)
+        public bool SetPolicyForPawn(Pawn pawn, SurgeryPolicy policy)
         {
             SurgeryPolicy selfPolicy = policy;
             if (IsNullPolicy(policy))
@@ -209,6 +290,17 @@ namespace PrisonerManagementPanel.Surgery
             if (_policyToPawnsMap == null)
             {
                 _policyToPawnsMap = new Dictionary<SurgeryPolicy, HashSet<Pawn>>();
+            }
+
+            // 检查 pawn 的种族 和 policy 是否匹配 且 不是 NonePolicy 不是 ClearPolicy
+            if (!RaceUtils.IsRaceMatch(pawn.def, policy.RecipeFilter.Race) && !IsNullPolicy(policy) &&
+                !IsClearPolicy(policy))
+            {
+                Messages.Message($"{pawn.Name} ({"Race".Translate()}: {pawn.def.LabelCap})" +
+                                 $"{policy.label} ({"Race".Translate()}: {policy.RecipeFilter.Race?.LabelCap ?? "None".Translate()})" +
+                                 $"{"SurgeryRace_UnableToSet".Translate()}"
+                    , MessageTypeDefOf.CautionInput);
+                return false;
             }
 
             _pawnPolicies.TryGetValue(pawn, out SurgeryPolicy oldPolicy);
@@ -226,6 +318,7 @@ namespace PrisonerManagementPanel.Surgery
             }
 
             pawnsSet.Add(pawn);
+            return true;
         }
 
         // 获取 Pawn 的手术策略
@@ -303,7 +396,12 @@ namespace PrisonerManagementPanel.Surgery
             // 如果 policy 是 null 则清空该 Pawn 关联的 policy
             if (IsNullPolicy(policy))
             {
-                SetPolicyForPawn(pawn, NonePolicy);
+                bool ok1 = SetPolicyForPawn(pawn, NonePolicy);
+                if (!ok1)
+                {
+                    return;
+                }
+
                 if (_policyToPawnsMap.TryGetValue(NonePolicy, out HashSet<Pawn> pawns))
                 {
                     pawns.Add(pawn);
@@ -336,7 +434,12 @@ namespace PrisonerManagementPanel.Surgery
                 }
             }
 
-            SetPolicyForPawn(pawn, policy);
+            bool ok2 = SetPolicyForPawn(pawn, policy);
+
+            if (!ok2)
+            {
+                return;
+            }
 
             if (!IsNonePolicy(policy))
             {
@@ -391,6 +494,8 @@ namespace PrisonerManagementPanel.Surgery
 
         public void UpdatePawnMedicalBills(Pawn pawn, SurgeryPolicy policy)
         {
+            ThingDef race = policy.RecipeFilter.Race ?? RaceUtils.DefaultRace();
+
             if (!ShouldApplyPolicy(pawn))
             {
                 return;
@@ -421,16 +526,20 @@ namespace PrisonerManagementPanel.Surgery
 
                 if (item.Recipe.targetsBodyPart)
                 {
-                    if (item.SelectedParts != null && item.SelectedParts.Count > 0)
+                    List<BodyPartRecord> selectedPartsWithRace = item.GetSelectedPartsWithRace(race);
+
+                    if (selectedPartsWithRace != null && selectedPartsWithRace.Count > 0)
                     {
-                        foreach (BodyPartRecord part in item.SelectedParts)
+                        foreach (BodyPartRecord part in selectedPartsWithRace)
                         {
                             HealthCardUtility.CreateSurgeryBill(pawn, item.Recipe, part);
                         }
                     }
                     else
                     {
-                        foreach (BodyPartRecord part in item.Recipe.Worker.GetPartsToApplyOn(pawn, item.Recipe))
+                        var parts = item.Recipe.Worker.GetPartsToApplyOn(pawn, item.Recipe);
+
+                        foreach (BodyPartRecord part in parts)
                         {
                             if (item.Recipe.AvailableOnNow((Thing)pawn, part))
                             {
@@ -453,6 +562,17 @@ namespace PrisonerManagementPanel.Surgery
 
             foreach (Pawn pawn in pawns)
             {
+                // 检查 pawn 的种族 和 policy 是否匹配 且 不是 NonePolicy 不是 ClearPolicy
+                if (!RaceUtils.IsRaceMatch(pawn.def, policy.RecipeFilter.Race) && !IsNullPolicy(policy) &&
+                    !IsClearPolicy(policy))
+                {
+                    Messages.Message($"{pawn.Name} ({"Race".Translate()}: {pawn.def.LabelCap})" +
+                                     $"{policy.label} ({"Race".Translate()}: {policy.RecipeFilter.Race?.LabelCap ?? "None".Translate()})" +
+                                     $"{"SurgeryRace_UnableToSet".Translate()}"
+                        , MessageTypeDefOf.CautionInput);
+                    SetPawnSurgeryPolicy(pawn, NonePolicy);
+                    return;
+                }
                 UpdatePawnMedicalBills(pawn, policy);
             }
         }
@@ -515,7 +635,7 @@ namespace PrisonerManagementPanel.Surgery
         // 是否是 null
         public bool IsNullPolicy(SurgeryPolicy policy)
         {
-            return policy == null;
+            return policy == null || policy.id == NonePolicy.id;
         }
 
         // 是否是清空所有手术

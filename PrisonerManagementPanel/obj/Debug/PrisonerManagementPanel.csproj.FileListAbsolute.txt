@@ -11,3 +11,7 @@ C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerMan
 C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Debug\PrisonerManagementPanel.dll
 C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Debug\PrisonerManagementPanel.pdb
 C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Debug\0Harmony.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Debug\AlienRace.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Debug\AlienRace.pdb
+D:\steam\steamapps\common\RimWorld\Mods\PrisonerManagementPanel\1.6\Assemblies\PrisonerManagementPanel.dll
+D:\steam\steamapps\common\RimWorld\Mods\PrisonerManagementPanel\1.6\Assemblies\PrisonerManagementPanel.pdb

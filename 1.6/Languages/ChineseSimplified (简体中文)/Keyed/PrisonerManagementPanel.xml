@@ -25,6 +25,8 @@
     <SurgeryApplyMode_Append_Tip>保留当前手术，并添加方案中的手术。</SurgeryApplyMode_Append_Tip>
     <SurgeryApplyMode_PartialUpdate_Tip>仅添加不存在的手术。</SurgeryApplyMode_PartialUpdate_Tip>
     <SurgeryApplyMode_Unknown_Tip>遇到了一些错误，未知模式</SurgeryApplyMode_Unknown_Tip>
+    <!-- 手术种族不匹配时的提示 -->
+    <SurgeryRace_UnableToSet>种族不匹配，无法设置</SurgeryRace_UnableToSet>
     <!-- 剥光 -->
     <ColumnStrip_Doing>正在剥光</ColumnStrip_Doing>
     <ColumnStripShiftClickTip>Shift + 左键点击: 剥光全部\nShift + 右键点击: 取消全部</ColumnStripShiftClickTip>

@@ -1,8 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using PrisonerManagementPanel.Utils;
 using RimWorld;
 using Verse;
 using UnityEngine;
+using Verse.Sound;
 
 namespace PrisonerManagementPanel.Surgery;
 
@@ -116,6 +119,12 @@ public class Dialog_ManageSurgeryPolicies(SurgeryPolicy policy) : Dialog_ManageP
         rect.y += 60f;
         rect.height -= 60f;
 
+        // 显示种族选择区域
+        Rect raceRect = new Rect(rect.x + 3f, rect.y + 3f, rect.width - 6f, 24f);
+        DoRaceSelection(raceRect, SelectedPolicy);
+        rect.y += 30f;
+        rect.height -= 30f;
+
         Rect left;
         Rect right;
         rect.SplitVerticallyWithMargin(out left, out right, 10f);
@@ -154,6 +163,55 @@ public class Dialog_ManageSurgeryPolicies(SurgeryPolicy policy) : Dialog_ManageP
         }
 
         listing.End();
+    }
+
+    // 种族选择功能
+    private void DoRaceSelection(Rect rect, SurgeryPolicy policy)
+    {
+        // 获取所有种族
+        List<ThingDef> allRaces = RaceUtils.GetAllRaces().ToList();
+        ThingDef selectedRace = policy.RecipeFilter.Race;
+
+        // 如果还没有选择种族，选择第一个人类种族或默认人类
+        if (selectedRace == null)
+        {
+            selectedRace = RaceUtils.DefaultRace();
+        }
+
+        string selectedRaceLabel = selectedRace?.label ?? "Select Race";
+
+        // 使用原版Dropdown组件
+        Widgets.Dropdown<ThingDef, ThingDef>(
+            rect,
+            selectedRace,
+            (race) => race,
+            (race) => GenerateRaceMenu(allRaces, policy),
+            selectedRaceLabel
+        );
+    }
+    
+    // 生成种族选择菜单
+    private IEnumerable<Widgets.DropdownMenuElement<ThingDef>> GenerateRaceMenu(List<ThingDef> allRaces, SurgeryPolicy policy)
+    {
+        foreach (ThingDef race in allRaces)
+        {
+            yield return new Widgets.DropdownMenuElement<ThingDef>()
+            {
+                option = new FloatMenuOption(race.label, () =>
+                {
+                    // 检查选择的种族是否与当前种族不同
+                    if (policy.RecipeFilter.Race != race)
+                    {
+                        // 如果不同，清空之前选择的身体部位
+                        policy.RecipeFilter.ClearItems();
+                        // 更新选择的种族
+                        policy.RecipeFilter.Race = race;
+                    }
+                    SoundDefOf.Click.PlayOneShotOnCamera();
+                }),
+                payload = race
+            };
+        }
     }
 
     private void AddInfoButton(Rect titleRect)

@@ -24,6 +24,8 @@
     <SurgeryApplyMode_Append_Tip>保留當前手術，並添加方案中的手術。</SurgeryApplyMode_Append_Tip>
     <SurgeryApplyMode_PartialUpdate_Tip>僅添加不存在的手術。</SurgeryApplyMode_PartialUpdate_Tip>
     <SurgeryApplyMode_Unknown_Tip>發生錯誤，未知模式</SurgeryApplyMode_Unknown_Tip>
+    <!-- 手術種族不匹配時的提示 -->
+    <SurgeryRace_UnableToSet>種族不匹配，無法設置</SurgeryRace_UnableToSet>
     <!-- 掠奪 -->
     <ColumnStrip_Doing>正在掠奪</ColumnStrip_Doing>
     <ColumnStripShiftClickTip>Shift+左鍵：全部掠奪\nShift+右鍵：全部取消</ColumnStripShiftClickTip>

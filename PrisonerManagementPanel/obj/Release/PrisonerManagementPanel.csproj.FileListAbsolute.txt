@@ -1,0 +1,15 @@
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\PrisonerManagementPanel.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\PrisonerManagementPanel.pdb
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\0Harmony.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\AlienRace.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\Assembly-CSharp.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\UnityEngine.CoreModule.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\UnityEngine.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\UnityEngine.IMGUIModule.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\UnityEngine.TextRenderingModule.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\bin\Release\AlienRace.pdb
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Release\PrisonerManagementPanel.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Release\PrisonerManagementPanel.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Release\Prisoner.E822F513.Up2Date
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Release\PrisonerManagementPanel.dll
+C:\Users\admin\Desktop\rimworld\环世界mod\PrisonerManagementPanel\PrisonerManagementPanel\obj\Release\PrisonerManagementPanel.pdb

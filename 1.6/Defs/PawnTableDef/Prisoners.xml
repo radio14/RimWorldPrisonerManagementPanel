@@ -13,6 +13,7 @@
             <li>MedicalCare</li>
             <li MayRequire="Ludeon.RimWorld.Biotech">Bloodfeed</li>
             <li MayRequire="Ludeon.RimWorld.Biotech">HemogenFarm</li>
+            <li MayRequire="Ludeon.RimWorld.Biotech">GeneExtraction</li>
             <li>PrisonBreakMTBDays</li>
             <li>RecruitmentResistance</li>
             <li>SlavePrice</li>

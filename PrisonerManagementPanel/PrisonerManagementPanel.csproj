@@ -37,9 +37,6 @@
         <Reference Include="0Harmony">
           <HintPath>..\..\..\1.6\0Harmony.dll</HintPath>
         </Reference>
-        <Reference Include="AlienRace">
-          <HintPath>..\..\..\1.6\AlienRace.dll</HintPath>
-        </Reference>
         <Reference Include="Assembly-CSharp">
           <HintPath>..\..\..\1.6\Assembly-CSharp.dll</HintPath>
         </Reference>
@@ -62,6 +59,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="ColumnWorker\PawnColumnWorker_Bloodfeed.cs" />
+        <Compile Include="ColumnWorker\PawnColumnWorker_GeneExtraction.cs" />
         <Compile Include="ColumnWorker\PawnColumnWorker_HemogenForm.cs" />
         <Compile Include="ColumnWorker\PawnColumnWorker_PrisonBreakMTBDays.cs" />
         <Compile Include="ColumnWorker\PawnColumnWorker_PrisonerInteraction.cs" />
@@ -69,6 +67,8 @@
         <Compile Include="ColumnWorker\PawnColumnWorker_SlavePrice.cs" />
         <Compile Include="ColumnWorker\PawnColumnWorker_Strip.cs" />
         <Compile Include="ColumnWorker\PawnColumnWorker_Surgery.cs" />
+        <Compile Include="GeneExtraction\Dialog_ManageGeneExtract.cs" />
+        <Compile Include="GeneExtraction\GeneExtractionStorage.cs" />
         <Compile Include="MainTabWindow_PrisonersTab.cs" />
         <Compile Include="Patch\SetGuestStatus_Patch.cs" />
         <Compile Include="PrisonerManagementPanelMod.cs" />

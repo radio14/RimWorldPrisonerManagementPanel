@@ -18,6 +18,12 @@
         <paintable>true</paintable>
     </PawnColumnDef>
 
+    <PawnColumnDef MayRequire="Ludeon.RimWorld.Biotech">
+        <defName>GeneExtraction</defName>
+        <label>基因提取</label>
+        <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_GeneExtraction</workerClass>
+    </PawnColumnDef>
+
     <PawnColumnDef>
         <defName>PrisonBreakMTBDays</defName>
         <label>Prison break interval</label>

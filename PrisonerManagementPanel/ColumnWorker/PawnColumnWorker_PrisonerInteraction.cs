@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using PrisonerManagementPanel.Utils;
 using Verse;
 using UnityEngine;
 using RimWorld;
@@ -9,7 +10,10 @@ namespace PrisonerManagementPanel.ColumnWorker
     // 囚犯互动
     public class PawnColumnWorker_PrisonerInteraction : PawnColumnWorker
     {
-        public override int GetMinWidth(PawnTable table) => Mathf.Max(base.GetMinWidth(table), 160);
+        public override int GetMinWidth(PawnTable table) 
+        {
+            return Mathf.Max(base.GetMinWidth(table), PawnColumnWorkerUtils.CalculateMinWidth("PrisonerInteraction"));
+        }
 
         public override void DoCell(Rect rect, Pawn pawn, PawnTable table)
         {
@@ -29,9 +33,9 @@ namespace PrisonerManagementPanel.ColumnWorker
 
             string label = currentMode?.LabelCap ?? "None".Translate();
 
-            // 使用 Dropdown 替代 ButtonText + FloatMenu
+            Rect contractedRect = rect.ContractedBy(0.0f, 2f);
             Widgets.Dropdown<Pawn, PrisonerInteractionModeDef>(
-                rect,
+                contractedRect,
                 pawn,
                 GetCurrentMode,
                 p => GenerateMenu(p, modes),

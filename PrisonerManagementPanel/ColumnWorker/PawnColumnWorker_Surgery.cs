@@ -11,7 +11,7 @@ namespace PrisonerManagementPanel.ColumnWorker
     // 囚犯手术列表
     public class PawnColumnWorker_Surgery : PawnColumnWorker
     {
-        public override int GetMinWidth(PawnTable table) => Mathf.Max(base.GetMinWidth(table), 160);
+        public override int GetMinWidth(PawnTable table) => Mathf.Max(base.GetMinWidth(table), 180);
 
         public override void DoHeader(Rect rect, PawnTable table)
         {

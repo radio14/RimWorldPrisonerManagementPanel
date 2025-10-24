@@ -1,3 +1,4 @@
+using PrisonerManagementPanel.Utils;
 using Verse;
 using UnityEngine;
 using RimWorld;
@@ -9,7 +10,10 @@ namespace PrisonerManagementPanel.ColumnWorker
     {
         protected override TextAnchor Anchor => TextAnchor.MiddleCenter;
 
-        public override int GetMinWidth(PawnTable table) => Mathf.Max(base.GetMinWidth(table), 80);
+        public override int GetMinWidth(PawnTable table) 
+        {
+            return Mathf.Max(base.GetMinWidth(table), PawnColumnWorkerUtils.CalculateMinWidth("SlavePrice"));
+        }
 
         protected override string GetTextFor(Pawn pawn)
         {

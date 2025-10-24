@@ -29,4 +29,18 @@
     <!-- Strip -->
     <ColumnStrip_Doing>Stripping</ColumnStrip_Doing>
     <ColumnStripShiftClickTip>Shift + click: Strip all\nShift + right click: Cancel all</ColumnStripShiftClickTip>
+    <!-- Genes -->
+    <GeneExtraction_Policy>Gene extraction policy</GeneExtraction_Policy>
+    <GeneExtraction_Save>Save</GeneExtraction_Save>
+    <GeneExtraction_Doing>Execute</GeneExtraction_Doing>
+    <GeneExtraction_Cancel>Cancel execution</GeneExtraction_Cancel>
+    <GeneExtraction_Optional>Optional genes</GeneExtraction_Optional>
+    <GeneExtraction_Selected>Selected genes</GeneExtraction_Selected>
+    <GeneExtraction_Search>Search genes</GeneExtraction_Search>
+    <GeneExtraction_Info>In this setting, select the genes you want to extract from prisoners. After saving and clicking execute, prisoners with matching genes will be automatically added to the gene extractor's task list.\n\nOperation Instructions:\n1. Click on genes in the left "Optional Genes" list to add them to the extraction list\n2. Click on genes in the right "Selected Genes" list to remove them\n3. Use the top search box to quickly find specific genes\n4. After selecting genes, click the "Save" button to save the current settings\n5. Click the "Execute" button to start the gene extraction process\n6. Click "Cancel Execution" to pause gene extraction, but this will not cancel tasks already in progress\n\nNote:\nOnly genes that can be extracted by gene extractors will be displayed in this list.\nThe execution process is a periodic task. After clicking execute, it will continue running until there are no qualifying prisoners or no available gene extractors.</GeneExtraction_Info>
+    <GeneExtraction_Info_Title>Gene extraction instructions</GeneExtraction_Info_Title>
+    <GeneExtraction_Info_AText>Confirm</GeneExtraction_Info_AText>
+    <GeneExtraction_NoPolicy>No extraction policy enabled</GeneExtraction_NoPolicy>
+    <GeneExtraction_MatchingGene>Matching genes</GeneExtraction_MatchingGene>
+    <GeneExtraction_NoMatchingGene>No matching genes</GeneExtraction_NoMatchingGene>
 </LanguageData>

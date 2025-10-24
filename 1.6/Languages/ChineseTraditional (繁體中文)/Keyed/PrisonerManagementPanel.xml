@@ -29,4 +29,18 @@
     <!-- 掠奪 -->
     <ColumnStrip_Doing>正在掠奪</ColumnStrip_Doing>
     <ColumnStripShiftClickTip>Shift+左鍵：全部掠奪\nShift+右鍵：全部取消</ColumnStripShiftClickTip>
+    <!-- 基因 -->
+    <GeneExtraction_Policy>基因抽取方案</GeneExtraction_Policy>
+    <GeneExtraction_Save>儲存</GeneExtraction_Save>
+    <GeneExtraction_Doing>執行</GeneExtraction_Doing>
+    <GeneExtraction_Cancel>取消執行</GeneExtraction_Cancel>
+    <GeneExtraction_Optional>可選基因</GeneExtraction_Optional>
+    <GeneExtraction_Selected>已選基因</GeneExtraction_Selected>
+    <GeneExtraction_Search>搜尋基因</GeneExtraction_Search>
+    <GeneExtraction_Info>在此設定中選擇想要從俘虜身上抽取的基因，儲存並點擊執行，會自動地將符合基因的俘虜加入到基因抽取器的任務中。\n\n操作說明：\n1. 從左側「可選基因」列表中點擊基因可將其新增至抽取列表\n2. 在右側「已選基因」列表中點擊基因可將其移除\n3. 使用頂部搜尋框可快速尋找特定基因\n4. 選擇基因後，點擊「儲存」按鈕儲存目前設定\n5. 點擊「執行」按鈕開始基因抽取過程\n6. 點擊「取消執行」可暫停基因抽取，但不會取消正在進行的任務\n\n注意：\n只有基因抽取器可提取的基因才會顯示在此列表中。\n執行過程是一個週期任務，點擊執行後會持續執行，直到沒有符合條件的俘虜或沒有可用的基因抽取器。</GeneExtraction_Info>
+    <GeneExtraction_Info_Title>基因抽取說明</GeneExtraction_Info_Title>
+    <GeneExtraction_Info_AText>確定</GeneExtraction_Info_AText>
+    <GeneExtraction_NoPolicy>暫未開啟提取方案</GeneExtraction_NoPolicy>
+    <GeneExtraction_MatchingGene>匹配的基因</GeneExtraction_MatchingGene>
+    <GeneExtraction_NoMatchingGene>沒有匹配的基因</GeneExtraction_NoMatchingGene>
 </LanguageData>

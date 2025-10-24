@@ -1,13 +1,20 @@
 using System;
 using System.Collections.Generic;
+using PrisonerManagementPanel.Utils;
 using Verse;
 using RimWorld;
+using UnityEngine;
 
 namespace PrisonerManagementPanel.ColumnWorker
 {
     // 收取血原质
     public class PawnColumnWorker_HemogenFarm : PawnColumnWorker_Checkbox
     {
+        public override int GetMinWidth(PawnTable table) 
+        {
+            return Mathf.Max(base.GetMinWidth(table), PawnColumnWorkerUtils.CalculateMinWidth("HemogenFarm"));
+        }
+        
         // 是否显示复选框
         protected override bool HasCheckbox(Pawn pawn)
         {

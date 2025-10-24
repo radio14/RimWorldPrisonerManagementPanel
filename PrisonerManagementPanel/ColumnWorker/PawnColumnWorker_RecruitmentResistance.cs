@@ -1,3 +1,4 @@
+using PrisonerManagementPanel.Utils;
 using Verse;
 using UnityEngine;
 using RimWorld;
@@ -9,7 +10,11 @@ namespace PrisonerManagementPanel.ColumnWorker
     {
         protected override TextAnchor Anchor => TextAnchor.MiddleCenter;
 
-        public override int GetMinWidth(PawnTable table) => Mathf.Max(base.GetMinWidth(table), 160);
+        public override int GetMinWidth(PawnTable table) 
+        {
+            int width = (int)Text.CalcSize("NonRecruitable".Translate()).x;
+            return Mathf.Max(base.GetMinWidth(table), PawnColumnWorkerUtils.CalculateMinWidth("RecruitmentResistance", width));
+        }
 
         protected override string GetTextFor(Pawn pawn)
         {

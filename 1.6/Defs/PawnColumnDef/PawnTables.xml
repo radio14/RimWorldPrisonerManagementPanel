@@ -20,8 +20,9 @@
 
     <PawnColumnDef MayRequire="Ludeon.RimWorld.Biotech">
         <defName>GeneExtraction</defName>
-        <label>基因提取</label>
+        <label>Gene extraction</label>
         <workerClass>PrisonerManagementPanel.ColumnWorker.PawnColumnWorker_GeneExtraction</workerClass>
+        <sortable>true</sortable>
     </PawnColumnDef>
 
     <PawnColumnDef>

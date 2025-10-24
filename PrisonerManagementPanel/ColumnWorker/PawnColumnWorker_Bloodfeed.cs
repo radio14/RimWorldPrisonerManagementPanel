@@ -1,11 +1,18 @@
+using PrisonerManagementPanel.Utils;
 using Verse;
 using RimWorld;
+using UnityEngine;
 
 namespace PrisonerManagementPanel.ColumnWorker
 {
     // 汲血
     public class PawnColumnWorker_Bloodfeed : PawnColumnWorker_Checkbox
     {
+        public override int GetMinWidth(PawnTable table) 
+        {
+            return Mathf.Max(base.GetMinWidth(table), PawnColumnWorkerUtils.CalculateMinWidth("Bloodfeed", 20));
+        }
+        
         // 是否显示复选框
         protected override bool HasCheckbox(Pawn pawn)
         {

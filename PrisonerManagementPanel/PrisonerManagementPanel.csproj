@@ -67,9 +67,11 @@
         <Compile Include="ColumnWorker\PawnColumnWorker_SlavePrice.cs" />
         <Compile Include="ColumnWorker\PawnColumnWorker_Strip.cs" />
         <Compile Include="ColumnWorker\PawnColumnWorker_Surgery.cs" />
+        <Compile Include="GeneExtraction\GeneAllocator.cs" />
         <Compile Include="GeneExtraction\Dialog_ManageGeneExtract.cs" />
         <Compile Include="GeneExtraction\GeneExtractionStorage.cs" />
         <Compile Include="MainTabWindow_PrisonersTab.cs" />
+        <Compile Include="Patch\Building_GeneExtractor_Tick_Patch.cs" />
         <Compile Include="Patch\SetGuestStatus_Patch.cs" />
         <Compile Include="PrisonerManagementPanelMod.cs" />
         <Compile Include="Structure\PawnSurgeryPolicyPair.cs" />
@@ -83,7 +85,10 @@
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="Structure\RecipeFilterItem.cs" />
         <Compile Include="Utils\BodyPartUtils.cs" />
+        <Compile Include="Utils\GeneUtils.cs" />
+        <Compile Include="Utils\PawnColumnWorkerUtils.cs" />
         <Compile Include="Utils\RaceUtils.cs" />
+        <Compile Include="Utils\HarmonyUtils.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

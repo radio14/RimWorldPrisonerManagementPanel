@@ -1,4 +1,4 @@
-using PrisonerManagementPanel.Patch;
+using PrisonerManagementPanel.Utils;
 using Verse;
 
 namespace PrisonerManagementPanel;
@@ -8,6 +8,6 @@ public class PrisonerManagementPanelMod : Mod
 {
     public PrisonerManagementPanelMod(ModContentPack content) : base(content)
     {
-        SetGuestStatus_Patch.TryRegisterPatch();
+        HarmonyUtils.TryRegisterPatch();
     }
 }

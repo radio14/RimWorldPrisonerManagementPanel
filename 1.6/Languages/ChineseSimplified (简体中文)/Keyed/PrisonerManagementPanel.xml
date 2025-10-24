@@ -30,4 +30,18 @@
     <!-- 剥光 -->
     <ColumnStrip_Doing>正在剥光</ColumnStrip_Doing>
     <ColumnStripShiftClickTip>Shift + 左键点击: 剥光全部\nShift + 右键点击: 取消全部</ColumnStripShiftClickTip>
+    <!-- 基因 -->
+    <GeneExtraction_Policy>基因提取方案</GeneExtraction_Policy>
+    <GeneExtraction_Save>保存</GeneExtraction_Save>
+    <GeneExtraction_Doing>执行</GeneExtraction_Doing>
+    <GeneExtraction_Cancel>取消执行</GeneExtraction_Cancel>
+    <GeneExtraction_Optional>可选基因</GeneExtraction_Optional>
+    <GeneExtraction_Selected>已选基因</GeneExtraction_Selected>
+    <GeneExtraction_Search>搜索基因</GeneExtraction_Search>
+    <GeneExtraction_Info>在此设置中选择想要从囚犯身上提取的基因，保存并点击执行，会自动的将符合基因的囚犯加入到基因提取器的任务中。\n\n操作说明：\n1. 从左侧“可选基因”列表中点击基因可将其添加到提取列表\n2. 在右侧“已选基因”列表中点击基因可将其移除\n3. 使用顶部搜索框可快速查找特定基因\n4. 选择基因后，点击“保存”按钮保存当前设置\n5. 点击“执行”按钮开始基因提取过程\n6. 点击“取消执行”可暂停基因提取，但不会取消正在进行的任务\n\n注意：\n只有基因提取器可提取的基因才会显示在此列表中。\n执行过程是一个周期任务，点击执行后会一直执行，直到没有符合条件的囚犯或没有可用的基因提取器。</GeneExtraction_Info>
+    <GeneExtraction_Info_Title>基因提取说明</GeneExtraction_Info_Title>
+    <GeneExtraction_Info_AText>确定</GeneExtraction_Info_AText>
+    <GeneExtraction_NoPolicy>暂未开启提取方案</GeneExtraction_NoPolicy>
+    <GeneExtraction_MatchingGene>匹配的基因</GeneExtraction_MatchingGene>
+    <GeneExtraction_NoMatchingGene>没有匹配的基因</GeneExtraction_NoMatchingGene>
 </LanguageData>

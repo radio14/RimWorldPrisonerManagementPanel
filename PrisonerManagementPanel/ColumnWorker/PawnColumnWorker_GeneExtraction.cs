@@ -73,6 +73,13 @@ public class PawnColumnWorker_GeneExtraction : PawnColumnWorker
                 {
                     tooltipText = "GeneExtraction_NoPolicy".Translate() + "\n";
                 }
+                
+                // 是否在基因重构
+                if (pawn.health.hediffSet.HasHediff(HediffDefOf.XenogermReplicating))
+                {
+                    string label = HediffDefOf.XenogermReplicating.label;
+                    tooltipText = label + "\n\n";
+                }
 
                 tooltipText += "GeneExtraction_MatchingGene".Translate() + ":\n" +
                                string.Join("\n", commonGenes.Select(g => g.LabelCap));

@@ -38,6 +38,7 @@ public class Dialog_ManageGeneExtract : Window
         this.absorbInputAroundWindow = true;
         this.resizeable = true;
         this.draggable = true;
+        this.closeOnClickedOutside = true;
 
         Init();
     }

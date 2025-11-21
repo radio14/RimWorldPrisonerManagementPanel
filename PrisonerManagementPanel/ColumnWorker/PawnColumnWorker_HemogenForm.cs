@@ -4,6 +4,7 @@ using PrisonerManagementPanel.Utils;
 using Verse;
 using RimWorld;
 using UnityEngine;
+using Verse.Sound;
 
 namespace PrisonerManagementPanel.ColumnWorker
 {
@@ -13,6 +14,32 @@ namespace PrisonerManagementPanel.ColumnWorker
         public override int GetMinWidth(PawnTable table) 
         {
             return Mathf.Max(base.GetMinWidth(table), PawnColumnWorkerUtils.CalculateMinWidth("HemogenFarm"));
+        }
+        
+        public override void DoHeader(Rect rect, PawnTable table)
+        {
+            base.DoHeader(rect, table);
+            MouseoverSounds.DoRegion(rect);
+            
+            // 计算居中位置，与其它标题按钮对齐
+            float checkboxSize = 24f;
+            Rect toggleRect = new Rect(
+                rect.x + (rect.width - checkboxSize) / 2f,
+                rect.y + (rect.height - 65f) + (32f - checkboxSize) / 2f, // 与其它按钮垂直对齐
+                checkboxSize,
+                checkboxSize
+            );
+            
+            bool defaultValue = PrisonerManagementPanelMod.Settings.defaultHemogenFarm;
+            Widgets.Checkbox(toggleRect.x, toggleRect.y, ref defaultValue, checkboxSize);
+            
+            if (defaultValue != PrisonerManagementPanelMod.Settings.defaultHemogenFarm)
+            {
+                PrisonerManagementPanelMod.Settings.defaultHemogenFarm = defaultValue;
+                PrisonerManagementPanelMod.Settings.Write();
+            }
+            
+            TooltipHandler.TipRegion(toggleRect, "HemogenFarmDefaultSettingTooltip".Translate());
         }
         
         // 是否显示复选框

@@ -1,6 +1,8 @@
 using PrisonerManagementPanel.Utils;
 using Verse;
 using UnityEngine;
+using System.Collections.Generic;
+using RimWorld;
 
 namespace PrisonerManagementPanel;
 
@@ -20,10 +22,13 @@ public class PrisonerManagementPanelMod : Mod
         Listing_Standard listing = new Listing_Standard();
         listing.Begin(inRect);
         
-        listing.Label("PrisonerManagementPanel_Settings".Translate());
         listing.CheckboxLabeled("BloodfeedDefaultSetting_Label".Translate(), 
                                ref Settings.defaultBloodfeed, 
                                "BloodfeedDefaultSettingTooltip".Translate());
+        listing.CheckboxLabeled("HemogenFarmDefaultSetting_Label".Translate(), 
+                               ref Settings.defaultHemogenFarm, 
+                               "HemogenFarmDefaultSettingTooltip".Translate());
+        listing.Gap(12f);
         
         listing.End();
         Settings.Write();

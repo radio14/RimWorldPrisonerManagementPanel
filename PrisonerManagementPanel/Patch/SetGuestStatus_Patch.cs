@@ -1,6 +1,5 @@
-using System;
-using System.Reflection;
 using HarmonyLib;
+using PrisonerManagementPanel.ColumnWorker;
 using PrisonerManagementPanel.Surgery;
 using PrisonerManagementPanel.Utils;
 using RimWorld;
@@ -32,6 +31,12 @@ public static class SetGuestStatus_Patch
             if (pawnField != null)
             {
                 PawnSurgeryPolicyStorage.Instance.ApplyDefaultSurgeryPolicy(pawnField);
+                
+                // 如果启用了默认汲血设置，则为新囚犯启用汲血
+                if (PrisonerManagementPanelMod.Settings.defaultBloodfeed)
+                {
+                    PawnColumnWorker_Bloodfeed.SetAllowBloodfeed(pawnField, true);
+                }
             }
         }
     }

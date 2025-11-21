@@ -43,4 +43,9 @@
     <GeneExtraction_NoPolicy>暫未開啟提取方案</GeneExtraction_NoPolicy>
     <GeneExtraction_MatchingGene>匹配的基因</GeneExtraction_MatchingGene>
     <GeneExtraction_NoMatchingGene>沒有匹配的基因</GeneExtraction_NoMatchingGene>
+    <!-- 只供吸血和血原畜養預設設定 -->
+    <BloodfeedDefaultSetting_Label>只供吸血預設設定</BloodfeedDefaultSetting_Label>
+    <BloodfeedDefaultSettingTooltip>啟用後，新捕獲的俘虜將自動啟用只供吸血標誌</BloodfeedDefaultSettingTooltip>
+    <HemogenFarmDefaultSetting_Label>血原畜養預設設定</HemogenFarmDefaultSetting_Label>
+    <HemogenFarmDefaultSettingTooltip>啟用後，新捕獲的俘虜將自動啟用血原畜養標誌</HemogenFarmDefaultSettingTooltip>
 </LanguageData>

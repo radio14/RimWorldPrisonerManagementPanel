@@ -44,4 +44,9 @@
     <GeneExtraction_NoPolicy>暂未开启提取方案</GeneExtraction_NoPolicy>
     <GeneExtraction_MatchingGene>匹配的基因</GeneExtraction_MatchingGene>
     <GeneExtraction_NoMatchingGene>没有匹配的基因</GeneExtraction_NoMatchingGene>
+    <!-- 汲血和收取血原质默认设置 -->
+    <BloodfeedDefaultSetting_Label>汲血默认设置</BloodfeedDefaultSetting_Label>
+    <BloodfeedDefaultSettingTooltip>启用后，新捕获的囚犯将自动启用汲血</BloodfeedDefaultSettingTooltip>
+    <HemogenFarmDefaultSetting_Label>收取血原质默认设置</HemogenFarmDefaultSetting_Label>
+    <HemogenFarmDefaultSettingTooltip>启用后，新捕获的囚犯将自动启用收取血原质</HemogenFarmDefaultSettingTooltip>
 </LanguageData>

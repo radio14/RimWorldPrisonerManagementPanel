@@ -43,4 +43,9 @@
     <GeneExtraction_NoPolicy>No extraction policy enabled</GeneExtraction_NoPolicy>
     <GeneExtraction_MatchingGene>Matching genes</GeneExtraction_MatchingGene>
     <GeneExtraction_NoMatchingGene>No matching genes</GeneExtraction_NoMatchingGene>
+    <!-- Bloodfeed and Hemogen Farm Default Settings -->
+    <BloodfeedDefaultSetting_Label>Bloodfeed default setting</BloodfeedDefaultSetting_Label>
+    <BloodfeedDefaultSettingTooltip>When enabled, newly captured prisoners will automatically have the bloodfeed flag enabled</BloodfeedDefaultSettingTooltip>
+    <HemogenFarmDefaultSetting_Label>Hemogen farm default setting</HemogenFarmDefaultSetting_Label>
+    <HemogenFarmDefaultSettingTooltip>When enabled, newly captured prisoners will automatically have the hemogen farm flag enabled</HemogenFarmDefaultSettingTooltip>
 </LanguageData>

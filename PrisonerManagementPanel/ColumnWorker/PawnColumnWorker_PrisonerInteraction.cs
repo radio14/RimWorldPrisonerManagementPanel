@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using PrisonerManagementPanel.GeneExtraction;
+using PrisonerManagementPanel.PrisonerInteraction;
 using PrisonerManagementPanel.Utils;
 using Verse;
 using UnityEngine;
 using RimWorld;
+using Verse.Sound;
 
 namespace PrisonerManagementPanel.ColumnWorker
 {
@@ -15,6 +18,31 @@ namespace PrisonerManagementPanel.ColumnWorker
             return Mathf.Max(base.GetMinWidth(table), PawnColumnWorkerUtils.CalculateMinWidth("PrisonerInteraction"));
         }
 
+        public override void DoHeader(Rect rect, PawnTable table)
+        {
+            base.DoHeader(rect, table);
+            MouseoverSounds.DoRegion(rect);
+
+            float minWidth = 120f;
+            string buttonText = "PrisonerInteraction_DefaultSettings".Translate();
+            Vector2 textSize = Text.CalcSize(buttonText);
+
+            float buttonWidth = Mathf.Max(minWidth, textSize.x + 20f);
+            float buttonHeight = 32f;
+
+            Rect buttonRect = new Rect(
+                rect.x + (rect.width - buttonWidth) / 2f,
+                rect.y + (rect.height - 65f),
+                buttonWidth,
+                buttonHeight
+            );
+
+            if (Widgets.ButtonText(buttonRect, buttonText))
+            {
+                Find.WindowStack.Add(new Dialog_ManagePrisonerInteraction());
+            }
+        }
+        
         public override void DoCell(Rect rect, Pawn pawn, PawnTable table)
         {
             if (pawn.guest == null) return;
@@ -24,7 +52,7 @@ namespace PrisonerManagementPanel.ColumnWorker
 
             // 获取所有可用的排他性互动模式
             List<PrisonerInteractionModeDef> modes = DefDatabase<PrisonerInteractionModeDef>.AllDefsListForReading
-                .Where(d => !d.isNonExclusiveInteraction && CanUse(pawn, d))
+                .Where(d => !d.isNonExclusiveInteraction && PrisonerInteractionUtils.CanUse(pawn, d))
                 .OrderBy(d => d.listOrder)
                 .ToList();
 
@@ -67,31 +95,6 @@ namespace PrisonerManagementPanel.ColumnWorker
             }
         }
 
-        private bool CanUse(Pawn pawn, PrisonerInteractionModeDef mode)
-        {
-            return (pawn.guest.Recruitable || !mode.hideIfNotRecruitable) &&
-                   (!pawn.IsWildMan() || mode.allowOnWildMan) &&
-                   (!mode.hideIfNoBloodfeeders || pawn.MapHeld == null || ColonyHasAnyBloodfeeder(pawn.MapHeld)) &&
-                   (!mode.hideOnHemogenicPawns || !ModsConfig.BiotechActive || pawn.genes == null ||
-                    !pawn.genes.HasActiveGene(GeneDefOf.Hemogenic)) &&
-                   (mode.allowInClassicIdeoMode || !Find.IdeoManager.classicMode) &&
-                   (!ModsConfig.AnomalyActive ||
-                    (!mode.hideIfNotStudiableAsPrisoner || PawnColumnWorker_PrisonerInteraction.IsStudiable(pawn)) &&
-                    (!mode.hideIfGrayFleshNotAppeared || Find.Anomaly.hasSeenGrayFlesh));
-        }
-
-        private static bool IsStudiable(Pawn pawn)
-        {
-            if (!ModsConfig.AnomalyActive)
-                return false;
-
-            CompStudiable comp;
-            return pawn.TryGetComp<CompStudiable>(out comp) &&
-                   comp.EverStudiable() &&
-                   pawn.kindDef.studiableAsPrisoner &&
-                   !pawn.everLostEgo;
-        }
-
         // 互动模式切换
         private void InteractionModeChanged(PrisonerInteractionModeDef newMode, Pawn pawn)
         {
@@ -107,15 +110,6 @@ namespace PrisonerManagementPanel.ColumnWorker
                 !ColonyHasAnyWardenCapableOfViolence(pawn.MapHeld))
                 Messages.Message("MessageCantDoExecutionBecauseNoWardenCapableOfViolence".Translate(), pawn,
                     MessageTypeDefOf.CautionInput);
-        }
-
-        private bool ColonyHasAnyBloodfeeder(Map map)
-        {
-            if (!ModsConfig.BiotechActive) return false;
-            foreach (var p in map.mapPawns.FreeColonistsSpawned)
-                if (p.IsBloodfeeder())
-                    return true;
-            return false;
         }
 
         private bool ColonyHasAnyWardenCapableOfEnslavement(Map map)

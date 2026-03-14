@@ -144,7 +144,7 @@ namespace PrisonerManagementPanel.Surgery
             Scribe_Collections.Look(ref _allSurgeryPolicy, "allSurgeryPolicy", LookMode.Deep);
             Scribe_References.Look(ref _defaultPolicy, "defaultPolicy");
 
-            Log.Message($"PrisonerManagementPanel version {_dataVersion}");
+            // Log.Message($"PrisonerManagementPanel version {_dataVersion}");
 
             // 低版本数据修复
             if (Scribe.mode == LoadSaveMode.LoadingVars && _dataVersion < 2)
@@ -159,7 +159,7 @@ namespace PrisonerManagementPanel.Surgery
         // 修复旧版本数据
         private void FixLegacyData()
         {
-            Log.Message("修复旧版本数据");
+            // Log.Message("修复旧版本数据");
 
             // 检查所有policy是否有种族设置，如果没有则添加默认种族
             if (_allSurgeryPolicy != null)
@@ -169,7 +169,7 @@ namespace PrisonerManagementPanel.Surgery
                     if (policy != null && policy.RecipeFilter != null && policy.RecipeFilter.Race == null)
                     {
                         policy.RecipeFilter.Race = RaceUtils.DefaultRace();
-                        Log.Message($"为Policy {policy.label} 设置默认种族");
+                        // Log.Message($"为Policy {policy.label} 设置默认种族");
                     }
                 }
             }

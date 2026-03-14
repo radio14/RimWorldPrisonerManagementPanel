@@ -48,4 +48,17 @@
     <BloodfeedDefaultSettingTooltip>啟用後，新捕獲的俘虜將自動啟用只供吸血標誌</BloodfeedDefaultSettingTooltip>
     <HemogenFarmDefaultSetting_Label>血原畜養預設設定</HemogenFarmDefaultSetting_Label>
     <HemogenFarmDefaultSettingTooltip>啟用後，新捕獲的俘虜將自動啟用血原畜養標誌</HemogenFarmDefaultSettingTooltip>
+    <!-- 俘虜互動默认设置 -->
+    <PrisonerInteraction_DefaultSettings>俘虜互動預設設定</PrisonerInteraction_DefaultSettings>
+    <PrisonerInteraction_Mode>互動模式</PrisonerInteraction_Mode>
+    <PrisonerInteraction_DefaultValue>預設設定</PrisonerInteraction_DefaultValue>
+    <PrisonerInteraction_NoRaces>無任何物種</PrisonerInteraction_NoRaces>
+    <PrisonerInteraction_Mode_EqualTreatment>一視同仁</PrisonerInteraction_Mode_EqualTreatment>
+    <PrisonerInteraction_Mode_EqualTreatment_Tip>全域統一設定</PrisonerInteraction_Mode_EqualTreatment_Tip>
+    <PrisonerInteraction_Mode_ByRace>分門別類</PrisonerInteraction_Mode_ByRace>
+    <PrisonerInteraction_Mode_ByRace_Tip>按物種分別設定</PrisonerInteraction_Mode_ByRace_Tip>
+    <PrisonerInteraction_Mode_ByGender>因性制宜</PrisonerInteraction_Mode_ByGender>
+    <PrisonerInteraction_Mode_ByGender_Tip>僅按性別分別設定</PrisonerInteraction_Mode_ByGender_Tip>
+    <PrisonerInteraction_Mode_ByRaceAndGender>因族因性</PrisonerInteraction_Mode_ByRaceAndGender>
+    <PrisonerInteraction_Mode_ByRaceAndGender_Tip>按物種與性別組合分別設定</PrisonerInteraction_Mode_ByRaceAndGender_Tip>
 </LanguageData>

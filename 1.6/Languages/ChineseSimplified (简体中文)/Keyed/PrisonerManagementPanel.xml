@@ -49,4 +49,17 @@
     <BloodfeedDefaultSettingTooltip>启用后，新捕获的囚犯将自动启用汲血</BloodfeedDefaultSettingTooltip>
     <HemogenFarmDefaultSetting_Label>收取血原质默认设置</HemogenFarmDefaultSetting_Label>
     <HemogenFarmDefaultSettingTooltip>启用后，新捕获的囚犯将自动启用收取血原质</HemogenFarmDefaultSettingTooltip>
+    <!-- 囚犯互动默认设置 -->
+    <PrisonerInteraction_DefaultSettings>囚犯互动默认设置</PrisonerInteraction_DefaultSettings>
+    <PrisonerInteraction_Mode>互动模式</PrisonerInteraction_Mode>
+    <PrisonerInteraction_DefaultValue>默认设置</PrisonerInteraction_DefaultValue>
+    <PrisonerInteraction_NoRaces>无任何种族</PrisonerInteraction_NoRaces>
+    <PrisonerInteraction_Mode_EqualTreatment>一视同仁</PrisonerInteraction_Mode_EqualTreatment>
+    <PrisonerInteraction_Mode_EqualTreatment_Tip>全局统一设置</PrisonerInteraction_Mode_EqualTreatment_Tip>
+    <PrisonerInteraction_Mode_ByRace>分门别类</PrisonerInteraction_Mode_ByRace>
+    <PrisonerInteraction_Mode_ByRace_Tip>按种族分别设置</PrisonerInteraction_Mode_ByRace_Tip>
+    <PrisonerInteraction_Mode_ByGender>因性制宜</PrisonerInteraction_Mode_ByGender>
+    <PrisonerInteraction_Mode_ByGender_Tip>仅按性别分别设置</PrisonerInteraction_Mode_ByGender_Tip>
+    <PrisonerInteraction_Mode_ByRaceAndGender>因族因性</PrisonerInteraction_Mode_ByRaceAndGender>
+    <PrisonerInteraction_Mode_ByRaceAndGender_Tip>按种族与性别组合分别设置</PrisonerInteraction_Mode_ByRaceAndGender_Tip>
 </LanguageData>

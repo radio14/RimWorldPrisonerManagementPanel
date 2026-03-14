@@ -48,4 +48,17 @@
     <BloodfeedDefaultSettingTooltip>When enabled, newly captured prisoners will automatically have the bloodfeed flag enabled</BloodfeedDefaultSettingTooltip>
     <HemogenFarmDefaultSetting_Label>Hemogen farm default setting</HemogenFarmDefaultSetting_Label>
     <HemogenFarmDefaultSettingTooltip>When enabled, newly captured prisoners will automatically have the hemogen farm flag enabled</HemogenFarmDefaultSettingTooltip>
+    <!-- Prisoner interaction default setting -->
+    <PrisonerInteraction_DefaultSettings>Settings</PrisonerInteraction_DefaultSettings>
+    <PrisonerInteraction_Mode>Prisoner interaction mode</PrisonerInteraction_Mode>
+    <PrisonerInteraction_DefaultValue>Default setting</PrisonerInteraction_DefaultValue>
+    <PrisonerInteraction_NoRaces>No races</PrisonerInteraction_NoRaces>
+    <PrisonerInteraction_Mode_EqualTreatment>Universal</PrisonerInteraction_Mode_EqualTreatment>
+    <PrisonerInteraction_Mode_EqualTreatment_Tip>Universal settings applied to all prisoners.</PrisonerInteraction_Mode_EqualTreatment_Tip>
+    <PrisonerInteraction_Mode_ByRace>By Race</PrisonerInteraction_Mode_ByRace>
+    <PrisonerInteraction_Mode_ByRace_Tip>Configure settings separately for each race.</PrisonerInteraction_Mode_ByRace_Tip>
+    <PrisonerInteraction_Mode_ByGender>Gender-Specific</PrisonerInteraction_Mode_ByGender>
+    <PrisonerInteraction_Mode_ByGender_Tip>Configure settings separately based on gender only.</PrisonerInteraction_Mode_ByGender_Tip>
+    <PrisonerInteraction_Mode_ByRaceAndGender>Race and Gender</PrisonerInteraction_Mode_ByRaceAndGender>
+    <PrisonerInteraction_Mode_ByRaceAndGender_Tip>Configure settings separately for each combination of race and gender.</PrisonerInteraction_Mode_ByRaceAndGender_Tip>
 </LanguageData>

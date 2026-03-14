@@ -7,17 +7,17 @@ namespace PrisonerManagementPanel.Utils
     public static class BodyPartUtils
     {
         // 不可移除的部位
-        public static readonly List<string> UnremovableParts = new List<string>()
-        {
-            // 躯干
-            "Torso",
-            // 颈部
-            "Neck",
-            // 肋骨
-            "Ribcage",
-            // 胸骨
-            "Sternum",
-        };
+        // public static readonly List<string> UnremovableParts = new List<string>()
+        // {
+        //     // 躯干
+        //     "Torso",
+        //     // 颈部
+        //     "Neck",
+        //     // 肋骨
+        //     "Ribcage",
+        //     // 胸骨
+        //     "Sternum",
+        // };
 
         public static IEnumerable<BodyPartRecord> GetAllHumanBodyParts()
         {
@@ -57,29 +57,29 @@ namespace PrisonerManagementPanel.Utils
             return part == part.body?.corePart;
         }
 
-        private static IEnumerable<BodyPartRecord> GetAllPartsRecursive(BodyDef bodyDef)
-        {
-            foreach (var part in bodyDef.AllParts)
-            {
-                yield return part;
-            }
-        }
-
-        private static IEnumerable<BodyPartRecord> GetChildPartsRecursive(BodyPartRecord part)
-        {
-            // 检查part是否为null
-            if (part == null)
-                yield break;
-                
-            foreach (var child in part.parts)
-            {
-                yield return child;
-
-                foreach (var grandChild in GetChildPartsRecursive(child))
-                {
-                    yield return grandChild;
-                }
-            }
-        }
+        // private static IEnumerable<BodyPartRecord> GetAllPartsRecursive(BodyDef bodyDef)
+        // {
+        //     foreach (var part in bodyDef.AllParts)
+        //     {
+        //         yield return part;
+        //     }
+        // }
+        //
+        // private static IEnumerable<BodyPartRecord> GetChildPartsRecursive(BodyPartRecord part)
+        // {
+        //     // 检查part是否为null
+        //     if (part == null)
+        //         yield break;
+        //         
+        //     foreach (var child in part.parts)
+        //     {
+        //         yield return child;
+        //
+        //         foreach (var grandChild in GetChildPartsRecursive(child))
+        //         {
+        //             yield return grandChild;
+        //         }
+        //     }
+        // }
     }
 }

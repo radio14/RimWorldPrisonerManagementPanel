@@ -1,5 +1,6 @@
 using HarmonyLib;
 using PrisonerManagementPanel.ColumnWorker;
+using PrisonerManagementPanel.PrisonerInteraction;
 using PrisonerManagementPanel.Surgery;
 using PrisonerManagementPanel.Utils;
 using RimWorld;
@@ -43,6 +44,9 @@ public static class SetGuestStatus_Patch
                 {
                     PawnColumnWorker_HemogenFarm.SetAllowHemogenHarvest(pawnField, true);
                 }
+
+                // 设置默认互动模式
+                PrisonerInteractionSettingStorage.Instance.SetPrisonerInteractionModeForPawn(pawnField);
             }
         }
     }

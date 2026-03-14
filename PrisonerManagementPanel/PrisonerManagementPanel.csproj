@@ -73,6 +73,9 @@
         <Compile Include="MainTabWindow_PrisonersTab.cs" />
         <Compile Include="Patch\Building_GeneExtractor_Tick_Patch.cs" />
         <Compile Include="Patch\SetGuestStatus_Patch.cs" />
+        <Compile Include="PrisonerInteraction\Dialog_ManagePrisonerInteraction.cs" />
+        <Compile Include="PrisonerInteraction\PrisonerInteractionSettingStorage.cs" />
+        <Compile Include="PrisonerInteraction\PrisonerInteractionSettingMode.cs" />
         <Compile Include="PrisonerManagementPanelMod.cs" />
         <Compile Include="Structure\PawnSurgeryPolicyPair.cs" />
         <Compile Include="Surgery\Dialog_ManageSurgeryPolicies.cs" />
@@ -87,8 +90,10 @@
         <Compile Include="Utils\BodyPartUtils.cs" />
         <Compile Include="Utils\GeneUtils.cs" />
         <Compile Include="Utils\PawnColumnWorkerUtils.cs" />
+        <Compile Include="Utils\PrisonerInteractionUtils.cs" />
         <Compile Include="Utils\RaceUtils.cs" />
         <Compile Include="Utils\HarmonyUtils.cs" />
+        <Compile Include="Utils\Pmp_TabDrawer.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
